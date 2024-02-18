@@ -103,5 +103,8 @@
         </tr>
     </table>
 </body>
-
+<?php
+    
+    require_once('../includes/sidebarjs.php');
+?>
 </html>

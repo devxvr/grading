@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <?php
-    $title = 'Report Card';
+    $title = 'Home';
     require_once('../includes/head.report.php');
 ?>
+
 <body>
 <?php
     require_once('../includes/sidebar.php');
 ?>  
-<table class="reportCard">
-      <thead>
-        <tr>
+
+<div class="main p-3">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary me-md-2" type="button">Back</button>
+      </div>
+  <img src="../images/final-logo.png" class="studentpic">
+            
+            <table class="table table-striped table-hover table-bordered">
+  <thead>
+  <tr>
           <td rowspan="3">Subject </td>
           <td colspan="4"> Quarter </td>
           <td rowspan="2"> Grade </td>
         </tr>
-        <tr>
-          <td> 1st</td>
-          <td> 2nd </td>
-          <td> 3rd </td>
-          <td> 4th </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
           <td>Mathematics </td>
           <td > </td>
           <td> </td>
@@ -88,11 +97,9 @@
           <td>  </td>
           <td> </td>
         </tr>
-        
-        
-      </tbody>
-      <tfoot>
-        <tr>
+  </tbody>
+  <tfoot>
+  <tr>
           <td colspan="4" class="footer">General Average</td>
           
           <td colspan="2"></td>
@@ -101,8 +108,17 @@
           <td colspan="4" class="footer">Promoted To</td>
           <td colspan="3"> </td>
         </tr>
-    </table>
+  </tfoot>
+</table>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary me-md-2" type="button">Promote</button>
+  
+</div>
+    <main>
+        
+    </main>
 </body>
+
 <?php
     
     require_once('../includes/sidebarjs.php');

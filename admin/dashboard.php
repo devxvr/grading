@@ -6,7 +6,7 @@
 ?>
 <body>
 <?php
-    require_once('../includes/sidebar.php');
+    require_once('../includes/sidebar.admin.php');
 ?>  
 <div class="main p-3">
     <div class="text">
@@ -16,4 +16,8 @@
             </div>
 </div>
 </body>
+<?php
+    
+    require_once('../includes/sidebarjs.php');
+?>
 </html>

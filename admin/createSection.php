@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'Dashboard';
+    $title = 'Section';
     require_once('../includes/head.php');
 ?>
 <body>

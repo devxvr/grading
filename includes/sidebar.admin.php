@@ -12,7 +12,7 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">CodzSword</a>
+                    <a href="#">Admin</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
@@ -52,7 +52,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="calendar.php" class="sidebar-link">
                         <i class="lni lni-calendar"></i>
                         <span>Calendar</span>
                     </a>
@@ -70,10 +70,22 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#faculty" aria-expanded="false" aria-controls="faculty">
                         <i class="lni lni-network"></i>
                         <span>Faculty</span>
                     </a>
+                    <ul id="faculty" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                            <a href="addFaculty.php" class="sidebar-link">Add Faculty</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="viewFaculty.php" class="sidebar-link">View Faculty</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="subjectHandled.php" class="sidebar-link">Subject Handled</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <div class="sidebar-footer">

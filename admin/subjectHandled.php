@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $title = 'Section';
+    $title = 'Faculty';
     require_once('../includes/head.php');
 ?>
 <body>

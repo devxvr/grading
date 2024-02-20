@@ -25,10 +25,10 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Add Student</a>
+                            <a href="addStudent.php" class="sidebar-link">Add Student</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Delete Student</a>
+                            <a href="deleteStudent.php" class="sidebar-link">Delete Student</a>
                         </li>
                     </ul>
                 </li>
@@ -41,10 +41,13 @@
                     </a>
                     <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Assign Section</a>
+                            <a href="createSection.php" class="sidebar-link">Add Section</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Assign Section</a>
+                            <a href="viewSection.php" class="sidebar-link">View Section</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="assignAdviser.php" class="sidebar-link">Assign Adviser</a>
                         </li>
                     </ul>
                 </li>

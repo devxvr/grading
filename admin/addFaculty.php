@@ -10,7 +10,7 @@
 ?>  
 <div class="main p-3">
     <div class="card bg-gray-500 text-dark">
-        <div class="page-title mt-2 ml-2">
+        <div class="page-title mt-2 ">
             <h2>Faculty</h2>
         </div>
     </div>

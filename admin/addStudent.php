@@ -25,7 +25,7 @@
                                         <form method="Post" action="">
                                             <div class="row mb-3">
                                                 
-                                                <div class="col-4">
+                                                <div class="col-3">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">LRN Number: </label>
                                                         <input id="" name="lid" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
@@ -73,7 +73,7 @@
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Sex:</label>
                                                             <select  name="designation" id="designation" class="form-select">
-                                                                <option value="">Select Sex:</option>
+                                                                <option value="">Select Sex</option>
                                                                 <option value="Male">Male</option>
                                                                 <option value="Female">Female</option>
                                                             </select>

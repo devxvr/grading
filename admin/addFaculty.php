@@ -15,7 +15,7 @@
         </div>
     </div>
     
-    <div class="card">
+    <div class="card mb-3 mt-4">
                             <div class="card-header">
                                 <strong class="card-title"><h2 align="center">Add New Faculty</h2></strong>
                             </div>
@@ -23,7 +23,7 @@
                                 <!-- Credit Card -->
                                        
                                         <form method="Post" action="">
-                                            <div class="row">
+                                            <div class="row mb-3">
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Last Name:</label>
@@ -50,13 +50,7 @@
                                                         <input id="" name="fid" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
                                                     </div>
                                                 </div>
-                                                        <!-- TRY LANG
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="cc-exp" class="control-label mb-1">Teacher Position:</label>
-                                                        <input id="" name="designation" type="tel" class="form-control cc-exp" value="" placeholder="">
-                                                    </div>
-                                                </div>-->
+                                                
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Teacher Position:</label>
@@ -80,7 +74,11 @@
                                                 </div>
                                             </div>
 </div>
-
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-primary me-md-2" type="button">Add</button>
+  <button class="btn btn-danger" type="button">Cancel</button>
+</div>
 </body>
 <?php
     

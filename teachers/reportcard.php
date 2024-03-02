@@ -17,7 +17,7 @@
       </div>
   <img src="../images/final-logo.png" class="studentpic">
             
-            <table class="table table-striped table-hover table-bordered">
+            <table class="table table-striped table-hover table-bordered" style="border: solid 2px black">
   <thead>
   <tr>
           <td rowspan="3">Subject </td>

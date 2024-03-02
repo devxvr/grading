@@ -37,6 +37,10 @@
             </ul>
             <div class="sidebar-footer">
                 <a href="#" class="sidebar-link">
+                    <i class="lni lni-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>

@@ -20,7 +20,7 @@
     
     <div class="card mb-3 mt-4">
         <div  div class="card-body">
-            
+
                     <!-- CONTENT -->
         </div>
     </div>
@@ -28,6 +28,6 @@
 </body>
 <?php
     
-    require_once('../includes/sidebarjs.php');
+    require_once('../includes/script.js.php');
 ?>
 </html>

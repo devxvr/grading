@@ -83,6 +83,6 @@
 
 <?php
     
-    require_once('../includes/sidebarjs.php');
+    require_once('../includes/script.js.php');
 ?>
 </html>

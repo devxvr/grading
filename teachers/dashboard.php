@@ -20,13 +20,34 @@
     
     <div class="card mb-3 mt-4">
         <div  div class="card-body">
-                                                           
+                <script>
+                    new Chart(document.getElementById("chartjs-doughnut"), {
+                type: "doughnut",
+        data: {
+    labels: ["Social", "Search Engines", "Direct", "Other"],
+    datasets: [{
+      data: [260, 125, 54, 146],
+      backgroundColor: [
+        window.theme.primary,
+        window.theme.success,
+        window.theme.warning,
+        "#dee2e6"
+      ],
+      borderColor: "transparent"
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    cutoutPercentage: 65,
+  }
+});
+                </script>  
         </div>
     </div>
 </div>
 </body>
 <?php
     
-    require_once('../includes/sidebarjs.php');
+    require_once('../includes/script.js.php');
 ?>
 </html>

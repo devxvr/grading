@@ -11,13 +11,19 @@
     require_once('../includes/sidebar.php');
 ?> 
 <div class="main p-3">
-            <div class="text-center">
-                <h1>
-                    Sidebar Bootstrap 5
-                </h1>
-            </div>
+    
+    <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="page-title mt-2 ">
+            <h2>Dashboard</h2>
         </div>
-
+    </div>
+    
+    <div class="card mb-3 mt-4">
+        <div  div class="card-body">
+                                                           
+        </div>
+    </div>
+</div>
 </body>
 <?php
     

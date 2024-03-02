@@ -12,15 +12,20 @@
 ?>  
 
 <div class="main p-3">
-    <div class="text">
-        <h1>
-            Grade 10
-        </h1>
-            </div>
-            
-            
+    
+<div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="page-title mt-2 ">
+            <h2>Master List</h2>
+        </div>
+    </div>
+    
+    <div class="card mb-3 mt-4">
+        <div class="card-header">
+             <strong class="card-title"><h2 align="center">Master List</h2></strong>
+        </div>
+    <div class="card-body">
     <div class="cont">
-        <table class="table table-striped table-hover text-center">
+        <table class="table table-striped table-hover text-center" style="border: solid 1px black;">
             <thead>
                 <tr>
                 <th scope="col">Id No.</th>
@@ -34,15 +39,15 @@
             </thead>
             <tbody>
                 <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Male</td>
-                <td>1</td>
-                <td>Zamboanga</td>
-                <td>09123456789</td>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td class="text-center">
                     <a href="#">
-                        <i class="lni lni-pencil" aria-hidden="true">
+                        <i class="lni lni-pencil" aria-hidden="true" style="color: black;">
                         </i>
                     </a>
                 </td>
@@ -51,7 +56,7 @@
                 
             </tbody>
         </table>
-</div>
+    </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
@@ -64,7 +69,12 @@
                     <a class="page-link" href="#">Next</a>
                     </li>
                 </ul>
-                </nav>
+            </nav>
+    </div>
+                                                                             
+    </div>
+</div>
+
 </div>
     <main>
         

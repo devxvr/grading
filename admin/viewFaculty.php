@@ -20,9 +20,31 @@
             <div class="card-header">
                 <strong class="card-title"><h2 align="center">All Faculty</h2></strong>
             </div>
-        <div  div class="card-body">
-        <!-- Credit Card -->
-                                                                             
+            <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="bootstrap-data-table" class="table table-hover table-striped table-bordered">
+                                <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Faculty Name</th>
+                                            <th>Faculty ID</th>
+                                            <th>Designation</th>
+                                            <th>Date Created</th>
+                                            <th>Action</th>
+                                                                                    
+                                            </tr>
+                                    </thead>
+                                    <tr>
+                                            <td></td>
+                                            <td ></td>
+                                            <td ></td>
+                                            <td ></td>
+                                            <td ></td>
+                                            <td ><a href="" title="Edit Faculty Details"><i class="las la-edit"></i></a>
+                                                <a class="delete" data-href="" title="Delete Faculty Details"><i class="las la-trash-alt"></i></a></td>
+                                            
+                                        </tr>
+                            </div>                                              
         </div>
     </div>
 </div>

@@ -25,7 +25,7 @@
         </div>
     <div class="card-body">
     <div class="cont">
-        <table class="table table-striped table-hover text-center" style="border: solid 1px black;">
+        <table class="table table-striped table-hover text-center table-bordered" style="border: 1px black;">
             <thead>
                 <tr>
                 <th scope="col">Id No.</th>

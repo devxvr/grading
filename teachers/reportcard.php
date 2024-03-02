@@ -16,8 +16,7 @@
   <button class="btn btn-primary me-md-2" type="button">Back</button>
       </div>
   <img src="../images/final-logo.png" class="studentpic">
-            
-            <table class="table table-striped table-hover table-bordered" style="border: solid 2px black">
+            <table class="table table-striped table-hover table-bordered" style="border: solid 2px black;">
   <thead>
   <tr>
           <td rowspan="3">Subject </td>

@@ -43,7 +43,7 @@
             </ul>
 
             <div class="sidebar-footer">
-            <a href="#" class="sidebar-link">
+            <a href="teacherSettings.php" class="sidebar-link">
                     <i class="lni lni-cog"></i>
                     <span>Settings</span>
                 </a>

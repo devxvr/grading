@@ -37,23 +37,23 @@
           <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td> </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>Science </td>
           <td > </td>
-          <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td>  </td>
+          <td>  </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>English </td>
           <td > </td>
-          <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td>  </td>
+          <td>  </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>Edukasyon sa Pagpapakatao </td>
@@ -61,7 +61,7 @@
           <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td> </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>Araling Panlipunan </td>
@@ -69,7 +69,7 @@
           <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td> </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>MAPEH </td>
@@ -77,7 +77,7 @@
           <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td> </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>Filipino </td>
@@ -85,7 +85,7 @@
           <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td> </td> <!-- Final Grade -->
         </tr>
         <tr>
           <td>Technology and Livelihood 
@@ -94,7 +94,7 @@
           <td> </td>
           <td>  </td>
           <td>  </td>
-          <td> </td>
+          <td> </td> <!-- Final Grade -->
         </tr>
   </tbody>
   <tfoot>

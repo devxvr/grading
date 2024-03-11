@@ -13,7 +13,6 @@ class grading_components {
         $this->db = new Database();
     }
 
-    // Method to fetch component details from the database based on component_id
     function get_component($component_id) {
         $query = "SELECT * FROM grading_components WHERE component_id = :component_id";
         $stmt = $this->db->connect()->prepare($query);
@@ -22,7 +21,7 @@ class grading_components {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Method to edit component details in the database
+    
     public function edit() {
         $query = "UPDATE grading_components SET name = :name WHERE component_id = :component_id";
         $stmt = $this->db->connect()->prepare($query);
@@ -31,7 +30,7 @@ class grading_components {
         return $stmt->execute();
     }
 
-    // Method to delete a component
+    
     public function delete($component_id) {
         $query = "DELETE FROM grading_components WHERE component_id = :component_id";
         $stmt = $this->db->connect()->prepare($query);

@@ -3,9 +3,9 @@ require_once './component_class.php';
 require_once './manage_component.php';
 require_once './actions.php';
 
-// Define the validate_field function
+
 function validate_field($field){
-    // Your validation logic goes here
+    
     return !empty($field);
 }
 
@@ -21,9 +21,9 @@ if(isset($_POST['save'])){
     //sanitize
     $component->name = htmlentities($_POST['name']);
 
-    // Perform validation
+   
     if (validate_field($component->name)) {
-        // Proceed with saving changes
+        
         if($component->edit()){
             header('location: maintenance.php');
             exit;

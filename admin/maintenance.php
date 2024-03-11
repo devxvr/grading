@@ -30,7 +30,7 @@ if (isset($_REQUEST['save_component'])) {
 if (isset($_REQUEST['save_subject'])) {
     $name = $_REQUEST['name'];
 
-    // Validation: Check if fields are empty
+   
     if (empty($name)) {
         $errors[] = "Subject is required.";
     }

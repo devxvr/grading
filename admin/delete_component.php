@@ -6,15 +6,15 @@ if(isset($_GET['id'])) {
     $componentId = $_GET['id'];
 
     if($component->delete($componentId)) {
-        // Delete successful
+        
         header("Location: maintenance.php");
         exit();
     } else {
-        // Delete failed
+       
         echo "Failed to delete component. Please try again.";
     }
 } else {
-    // Invalid request, no component ID provided
+
     echo "Invalid request. No component ID provided.";
 }
 ?>

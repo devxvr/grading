@@ -1,5 +1,5 @@
 <?php
-    require_once './includes/database.php';
+    require_once '../includes/database.php';
     
     class component_subject_percentage{
     //attributes

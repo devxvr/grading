@@ -1,11 +1,11 @@
 <?php
-require_once './subject_class.php';
-require_once './manage_subject.php';
-require_once './actions.php';
+require_once '../subject_class.php';
+require_once '../manage_subject.php';
 
-// Define the validate_field function
+
+
 function validate_field($field){
-    // Your validation logic goes here
+   
     return !empty($field);
 }
 
@@ -18,12 +18,12 @@ if(isset($_GET['id'])){
 if(isset($_POST['save'])){
     $subject = new subjects();
     $subject->subject_id = $_GET['id'];
-    //sanitize
+   
     $subject->name = htmlentities($_POST['name']);
 
-    // Perform validation
+   
     if (validate_field($subject->name)) {
-        // Proceed with saving changes
+       
         if($subject->edit()){
             header('location: maintenance.php');
             exit;

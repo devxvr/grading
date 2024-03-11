@@ -29,15 +29,21 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="calendar.php" class="sidebar-link">
-                        <i class="lni lni-calendar"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
                     <a href="classes.php" class="sidebar-link">
                         <i class="lni lni-users"></i>
                         <span>Classes</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="promotion.php" class="sidebar-link">
+                        <i class="lni lni-arrow-up-circle"></i>
+                        <span>Promote Student</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="calendar.php" class="sidebar-link">
+                        <i class="lni lni-calendar"></i>
+                        <span>Calendar</span>
                     </a>
                 </li>
             </ul>

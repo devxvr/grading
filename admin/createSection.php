@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
     $title = 'Section';
     require_once('../includes/head.php');

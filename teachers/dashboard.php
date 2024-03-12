@@ -20,15 +20,18 @@
     
     <div class="card mb-3 mt-4">
         <div  div class="card-body">
-            <div class="category">
-                <select name="Category" id="category">
-                    <option value="volvo">1st Quarter</option>
-                    <option value="saab">2nd Quarter</option>
-                    <option value="opel">3rd Quarter</option>
-                    <option value="audi">4th Quarter</option>
-                </select>
-            </div>
-                <div class="allcharts" style="gap: 30px; height: 270px;">
+            <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Quarter
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">1st Quarter</a></li>
+                        <li><a class="dropdown-item" href="#">2nd Quarter</a></li>
+                        <li><a class="dropdown-item" href="#">3rd Quarter</a></li>
+                        <li><a class="dropdown-item" href="#">4th Quarter</a></li>
+                    </ul>
+                    </div>
+                <div class="allcharts" style="gap: 40px; height: 300px; margin-top:3%">
                     <div class="chart" style="background-color: #f6f6f6; width: 450px; padding: 10px; border-radius: 5px; box-shadow: 2px 4px 8px 1px rgba(29, 45, 68, 0.389);">
                         <canvas id="myChart" style="width:100%;max-width:600px;height: 250px;"></canvas>
                                     <?php

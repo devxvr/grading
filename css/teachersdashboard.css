@@ -1,15 +1,23 @@
 .allcharts {
     display: flex;
     justify-content: center;
-    /* justify-content: center; */
+    gap: 40px; 
+    height: 300px;
+    
 }
-
-.category{
+.chart{
+    background-color: #ffffff;
+    width: 450px;
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 2px 4px 8px 1px rgba(29, 45, 68, 0.389);
+}
+.dropdown{
     /*float: right;*/
-    margin: 25px;
+    margin: 20px;
     display: flex;
     justify-content: flex-end;
-
+    
     /*float: right;
     margin: 25px;
     display: flex;

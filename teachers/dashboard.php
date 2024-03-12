@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <?php
     $title = 'Home';
-    require_once('../includes/head.php');
+    require_once('../includes/head.teachers.dashboard.php');
 ?>
+
 
 <body>
 <?php
@@ -17,34 +20,56 @@
             <h2>Dashboard</h2>
         </div>
     </div>
+    <div class="category">
+        <select name="Category" id="category">
+            <option value="volvo">1st Quarter</option>
+            <option value="saab">2nd Quarter</option>
+            <option value="opel">3rd Quarter</option>
+            <option value="audi">4th Quarter</option>
+        </select>
+    </div>
+    <div class="allcharts" style="gap: 30px; height: 270px;">
+        <div class="chart" style="background-color: #f6f6f6; width: 450px; padding: 10px; border-radius: 5px; box-shadow: 2px 4px 8px 1px rgba(29, 45, 68, 0.389);">
+            <canvas id="myChart" style="width:100%;max-width:600px;height: 250px;"></canvas>
+            <?php
     
-    <div class="card mb-3 mt-4">
-        <div  div class="card-body">
-                <script>
-                    new Chart(document.getElementById("chartjs-doughnut"), {
-                type: "doughnut",
-        data: {
-    labels: ["Social", "Search Engines", "Direct", "Other"],
-    datasets: [{
-      data: [260, 125, 54, 146],
-      backgroundColor: [
-        window.theme.primary,
-        window.theme.success,
-        window.theme.warning,
-        "#dee2e6"
-      ],
-      borderColor: "transparent"
-    }]
-  },
-  options: {
-    maintainAspectRatio: false,
-    cutoutPercentage: 65,
-  }
-});
-                </script>  
+    require_once('../includes/script.chart1.js.php');
+?>
+        </div>
+        <div class="chart2" style="background-color: #efefef; width: 450px;  padding: 10px; border-radius: 5px; box-shadow: 2px 4px 8px 1px rgba(29, 45, 68, 0.389);">
+            <canvas id="myChart2" style="width:100%;max-width:600px;height: 250px;"></canvas>
+            <?php
+    
+    require_once('../includes/script.chart2.js.php');
+?>
         </div>
     </div>
-</div>
+    <div class="table-responsive">
+        <h2>RANKINGS</h2>
+        <div class="ranking" style="overflow-y: scroll; height: 250px; width: 50%">
+            <table class="table table-striped table-hover text-center table-bordered" style="border: 1px black;">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">GRADE & SECTION</th>
+                    <th scope="col">GENERAL AVERAGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
 </body>
 <?php
     

@@ -65,8 +65,8 @@ if (isset($_REQUEST['save_subject'])) {
 ?>
 <body>
 <?php
-    require_once('../includes/sidebar.admin.php');
-?>  
+    require_once('../includes/sidebar.php');
+?> 
 <div class="main p-3">
     
     <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">

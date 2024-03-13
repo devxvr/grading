@@ -92,7 +92,7 @@ if (isset($_POST['save_percentage'])) {
 ?>
 <body>
 <?php
-    require_once('../includes/sidebar.admin.php');
+    require_once('../includes/sidebar.php');
 ?>  
 <div class="main p-3">
     

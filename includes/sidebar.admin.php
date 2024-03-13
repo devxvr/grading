@@ -118,12 +118,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item">
-                    <a href="maintenance.php" class="sidebar-link">
-                        <i class="lni lni-protection"></i>
-                        <span>Maintenance</span>
-                    </a>
-                </li>
             </ul>
             <div class="sidebar-footer">
                 <a href="adminSettings.php" class="sidebar-link">

@@ -44,6 +44,12 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a href="maintenance.php" class="sidebar-link">
+                        <i class="lni lni-protection"></i>
+                        <span>Maintenance</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a href="promotion.php" class="sidebar-link">
                         <i class="lni lni-arrow-up-circle"></i>
                         <span>Promote Student</span>

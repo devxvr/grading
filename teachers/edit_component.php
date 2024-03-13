@@ -1,8 +1,7 @@
 
-
 <?php
-require_once './subject_class.php';
-require_once './manage_subject.php';
+require_once './component_class.php';
+require_once './manage_component.php';
 
 
 // Define the validate_field function
@@ -12,21 +11,21 @@ function validate_field($field){
 }
 
 if(isset($_GET['id'])){
-    $subject = new subjects();
-    $record = $subject->get_component($_GET['id']);
-    $subject->name = $record['name'];
+    $component = new grading_components();
+    $record = $component->get_component($_GET['id']);
+    $component->name = $record['name'];
 }
 
 if(isset($_POST['save'])){
-    $subject = new subjects();
-    $subject->subject_id = $_GET['id'];
+    $component = new grading_components();
+    $component->component_id = $_GET['id'];
     //sanitize
-    $subject->name = htmlentities($_POST['name']);
+    $component->name = htmlentities($_POST['name']);
 
     // Perform validation
-    if (validate_field($subject->name)) {
+    if (validate_field($component->name)) {
         // Proceed with saving changes
-        if($subject->edit()){
+        if($component->edit()){
             header('location: maintenance.php');
             exit;
         } else {
@@ -38,20 +37,19 @@ if(isset($_POST['save'])){
 }
 ?>
 
-
 <?php
     $title = 'Calendar';
     require_once('../includes/head.php');
 ?>
 <body>
 <?php
-    require_once('../includes/sidebar.admin.php');
-?>  
+    require_once('../includes/sidebar.php');
+?> 
 <div class="main p-3">
     
     <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
         <div class="page-title mt-2 ">
-            <h2>Edit Subject</h2>
+            <h2>Edit Components</h2>
         </div>
     </div>
     
@@ -59,11 +57,11 @@ if(isset($_POST['save'])){
         <div  div class="card-body">
             
         <div class="container-fluid">
-    <form action="" id="subject-form" method="post">
-        <input type="hidden" name="id" value="<?php echo isset($subject_id) ? $subject_id : '' ?>">
+    <form action="" id="component-form" method="post">
+        <input type="hidden" name="id" value="<?php echo isset($component_id) ? $component_id : '' ?>">
         <div class="col-4 form-group">
-            <label for="name" class="control-label">Subject Name</label>
-            <input type="text" name="name" autofocus id="name" required class="form-control form-control-sm rounded-0" value="<?php echo isset($name) ? $name : '' ?>">
+            <label for="name" class="control-label"></label>
+            <input type="text" name="name" autofocus id="name" required class="form-control form-control-sm rounded-0" value="<?php if(isset($_POST['name'])) { echo $_POST['name']; } else if (isset($component->name)){ echo $component->name; } ?>">
         </div>
         <div class="button-group">
             <button type="submit" name="save" class="btn btn-primary mt-3 mb-2 brand-bg-color" id="addStaffButton">Save Changes</button>

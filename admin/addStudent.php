@@ -121,17 +121,10 @@
 
                                             <div class="row mb-3">
                                                 
-                                                        <!-- TRY LANG
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="cc-exp" class="control-label mb-1">Teacher Position:</label>
-                                                        <input id="" name="designation" type="tel" class="form-control cc-exp" value="" placeholder="">
-                                                    </div>
-                                                </div>-->
                                                 <div class="col-3">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Sex:</label>
-                                                        <select name="sex" id="sex">
+                                                        <select name="sex" id="sex" class="form-select">
                                                         <option value="">Select a gender</option>
                                                         <?php echo getGenderOptions(isset($_POST['gender']) ? $_POST['gender'] : null); ?>
                                                     </select>

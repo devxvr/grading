@@ -51,6 +51,23 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#subject" aria-expanded="false" aria-controls="subject">
+                        <i class="lni lni-library"></i>
+                        <span>Subject</span>
+                    </a>
+                    <ul id="subject" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                            <a href="addSubject.php" class="sidebar-link">Add Subject</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="viewSubject.php" class="sidebar-link">View Subject</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="sidebar-item">
                     <a href="calendar.php" class="sidebar-link">
                         <i class="lni lni-calendar"></i>

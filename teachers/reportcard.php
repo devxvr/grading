@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
     $title = 'Home';
     require_once('../includes/head.report.php');

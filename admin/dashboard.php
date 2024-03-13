@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
     $title = 'Dashboard';
     require_once('../includes/head.php');

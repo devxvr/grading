@@ -1,6 +1,37 @@
 <?php
+
+function validate_field($value) {
+   
+    if(empty($value)) {
+        return false; 
+    } else {
+        return true; 
+    }
+}
+
+
+require_once './section-class.php';
+if(isset($_POST['save'])){
+    $sections = new section();
+    $sections->section = htmlentities($_POST['section']);
+    $sections->gradelvl = htmlentities($_POST['gradelvl']);
+    
+    // Validate the fields
+    if (validate_field($sections->section) && validate_field($sections->gradelvl)){
+        if($sections->add()){
+            header('location: admin-staff.php');
+        } else {
+            echo 'An error occurred while adding in the database.';
+        }
+    } else {
+        echo 'Please fill in all required fields.';
+    }
+}
+?>
+
+<?php
     $title = 'Section';
-    require_once('../includes/head.php');
+    require_once '../includes/head.php';
 ?>
 <body>
 <?php
@@ -22,7 +53,7 @@
                             <div class="col-6">
                                 <div class="form-group">
                                       <label for="cc-exp" class="control-label mb-1">Grade Level:</label>
-                                              <select name="designation" id="designation" class="form-select">
+                                              <select name="gradelvl" id="designation" class="form-select">
                                                      <option value="">Select Grade Level</option>
                                                       <option value="Male">Grade 7</option>
                                                       <option value="Female">Grade 8</option>
@@ -42,7 +73,7 @@
                 </div>
         </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-primary me-md-2" type="button">Add</button>
+  <button class="btn btn-primary me-md-2" type="submit" name="save">Add</button>
   <button class="btn btn-danger" type="button">Cancel</button>
 </div>
 </body>

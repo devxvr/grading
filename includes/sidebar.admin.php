@@ -16,7 +16,12 @@
                 </div>
             </div>
             <ul class="sidebar-nav">
-                
+            <li class="sidebar-item">
+                    <a href="dashboard.php" class="sidebar-link">
+                        <i class="lni lni-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                         data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
@@ -26,6 +31,9 @@
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a href="addStudent.php" class="sidebar-link">Add Student</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="viewStudent.php" class="sidebar-link">View Student</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="deleteStudent.php" class="sidebar-link">Delete Student</a>

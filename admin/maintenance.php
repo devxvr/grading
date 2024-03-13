@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <?php
 require_once('../includes/database.php');
 require_once './component_class.php';
@@ -51,21 +59,26 @@ if (isset($_REQUEST['save_subject'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.css">
-
-    <title>Maintenance</title>
-</head>
-
+<?php
+    $title = 'Maintenance';
+    require_once('../includes/head.php');
+?>
 <body>
-
-    <div class="card h-100 d-flex flex-column">
+<?php
+    require_once('../includes/sidebar.admin.php');
+?>  
+<div class="main p-3">
+    
+    <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="page-title mt-2 ">
+            <h2>Maintenance</h2>
+        </div>
+    </div>
+    
+    <div class="card mb-3 mt-4">
+        <div  div class="card-body">
+            
+        <div class="card h-100 d-flex flex-column">
         <div class="card-header d-flex justify-content-between">
             <h3 class="card-title">Maintenance</h3>
             <div class="card-tools align-middle">
@@ -164,16 +177,20 @@ if (isset($_REQUEST['save_subject'])) {
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 
-    
-    <?php require_once 'add_component.php'; ?>
+<?php require_once 'add_component.php'; ?>
 
     
     <?php require_once 'add_subject.php'; ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    
 </body>
-
+<?php
+    
+    require_once('../includes/script.js.php');
+?>
 </html>

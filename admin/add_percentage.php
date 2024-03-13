@@ -1,3 +1,5 @@
+
+
 <?php
 require_once("../includes/database.php");
 require_once("./percentage-class.php");
@@ -84,19 +86,26 @@ if (isset($_POST['save_percentage'])) {
 }
 ?>
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.css">
-</head>
+<?php
+    $title = 'Maintenance';
+    require_once('../includes/head.php');
+?>
 <body>
-<div class="container-fluid">
+<?php
+    require_once('../includes/sidebar.admin.php');
+?>  
+<div class="main p-3">
+    
+    <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="page-title mt-2 ">
+            <h2>Manage Components</h2>
+        </div>
+    </div>
+    
+    <div class="card mb-3 mt-4">
+        <div  div class="card-body">
+            
+        <div class="container-fluid">
     <form id="percentage-form" method="post" action="#">
 
         <input type="hidden" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : '' ?>">
@@ -155,7 +164,9 @@ if (isset($_POST['save_percentage'])) {
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        </div>
+    </div>
+</div>
 <script>
 $(function(){
     // Update total percentage calculation on input change
@@ -191,4 +202,8 @@ $(function(){
 });
 </script>
 </body>
+<?php
+    
+    require_once('../includes/script.js.php');
+?>
 </html>

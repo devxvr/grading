@@ -16,10 +16,16 @@
                 </div>
             </div>
             <ul class="sidebar-nav">
-            <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="dashboard.php" class="sidebar-link">
                         <i class="lni lni-home"></i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="schoolyear.php" class="sidebar-link">
+                        <i class="lni lni-database"></i>
+                        <span>School Year</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -113,7 +119,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="maintenance.php" class="sidebar-link">
                         <i class="lni lni-protection"></i>
                         <span>Maintenance</span>
                     </a>

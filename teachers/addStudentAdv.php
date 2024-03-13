@@ -19,7 +19,12 @@
         $student->contact = htmlentities($_POST['contact']);
         $student->LRN = htmlentities($_POST['LRN']);
         $student->sex = htmlentities($_POST['sex']);
-        
+        $student->father = htmlentities($_POST['father']);
+        $student->fathernum = htmlentities($_POST['fathernum']);
+        $student->mother = htmlentities($_POST['mother']);
+        $student->mothernum = htmlentities($_POST['mothernum']);
+        $student->guardian = htmlentities($_POST['guardian']);
+        $student->guardiannum = htmlentities($_POST['guardiannum']);
         
 
         //validate
@@ -208,18 +213,18 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="cc-exp" class="control-label mb-1">Guardian's Name <span style="color:red;">*</span></label>
-                                                <input id="guardian" name="guardian" type="text" class="form-control cc-exp" value="<?= isset($_POST['guardian']) ? $_POST['guardian'] : ''; ?>" Required data-val="true" data-val-required="Please enter the security code" data-val-cc-exp="Please enter a valid security code" placeholder="">
+                                                <input id="guardian" name="guardian" type="text" class="form-control cc-exp" value="<?= isset($_POST['guardian']) ? $_POST['guardian'] : ''; ?>"  data-val="true" data-val-required="Please enter the security code" data-val-cc-exp="Please enter a valid security code" placeholder="">
                                                 </div>
                                             </div>  
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="x_card_code" class="control-label mb-1">Contact Number <span style="color:red;">*</span></label>
-                                                <input id="guardiannum" name="guardiannum" type="phone" maxlength="11" minlength="11" class="form-control cc-exp" value="<?= isset($_POST['guardiannum']) ? $_POST['guardiannum'] : ''; ?>" Required data-val="true" data-val-required="Please enter the security code" data-val-cc-exp="Please enter a valid security code" placeholder="">
+                                                <input id="guardiannum" name="guardiannum" type="phone" maxlength="11" minlength="11" class="form-control cc-exp" value="<?= isset($_POST['guardiannum']) ? $_POST['guardiannum'] : ''; ?>"  data-val="true" data-val-required="Please enter the security code" data-val-cc-exp="Please enter a valid security code" placeholder="">
                                             </div>
                                         </div>
                                     </div>
                                         <div>
-                                            <button type="submit" name="submit" class="btn btn-primary mt-3">Add New Student</button>
+                                            <button type="submit" name="save" class="btn btn-primary mt-3">Add New Student</button>
                                         </div>
                                     </form>
                                 </div>

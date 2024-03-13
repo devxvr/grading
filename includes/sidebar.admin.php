@@ -36,13 +36,10 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="addStudent.php" class="sidebar-link">Add Student</a>
+                            <a href="addStudentadv.php" class="sidebar-link">Add Student</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewStudent.php" class="sidebar-link">View Student</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="deleteStudent.php" class="sidebar-link">Delete Student</a>
                         </li>
                     </ul>
                 </li>
@@ -74,7 +71,7 @@
                     </a>
                     <ul id="subject" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="addSubject.php" class="sidebar-link">Add Subject</a>
+                            <a href="add_Subject.php" class="sidebar-link">Add Subject</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewSubject.php" class="sidebar-link">View Subject</a>

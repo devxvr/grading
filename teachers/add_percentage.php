@@ -10,7 +10,7 @@ $errors = array();
 
 $subject_id = isset($_GET['id']) ? $_GET['id'] : '';
 
-// Fetch existing percentages for the subject
+
 $data = [];
 if($subject_id) {
     $stmt = $conn->prepare("SELECT * FROM component_subject_percentage WHERE subject_id = :subject_id");
@@ -18,7 +18,7 @@ if($subject_id) {
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Check if there are existing entries for the subject
+
 $existing_entries = count($data) > 0;
 
 if (isset($_POST['save_percentage'])) {

@@ -10,7 +10,7 @@ function validate_field($value) {
 }
 
 
-require_once './section-class.php';
+require_once '../classes/section-class.php';
 if(isset($_POST['save'])){
     $sections = new section();
     $sections->section = htmlentities($_POST['section']);
@@ -55,10 +55,10 @@ if(isset($_POST['save'])){
                                       <label for="cc-exp" class="control-label mb-1">Grade Level:</label>
                                               <select name="gradelvl" id="designation" class="form-select">
                                                      <option value="">Select Grade Level</option>
-                                                      <option value="Male">Grade 7</option>
-                                                      <option value="Female">Grade 8</option>
-                                                      <option value="Male">Grade 9</option>
-                                                      <option value="Female">Grade 10</option>
+                                                      <option value="grade 7">Grade 7</option>
+                                                      <option value="grade 8">Grade 8</option>
+                                                      <option value="grade 9">Grade 9</option>
+                                                      <option value="grade 10">Grade 10</option>
                                                 </select>
                                 </div>
                             </div>

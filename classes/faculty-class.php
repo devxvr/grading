@@ -1,20 +1,16 @@
 <?php
 
-require_once 'database.php';
+require_once '../includes/database.php';
 
-Class student{
+Class faculty{
     //attributes
 
-    public $id;
+    public $faculty_id;
     public $firstname;
     public $middlename;
     public $lastname;
-    public $suffix;
-    public $sex;
-    public $contact;
-    public $birthday;
-    public $address;
-    public $LRN;
+    public $employee_id;
+    public $teacher_position;
 
     protected $db;
 
@@ -26,19 +22,16 @@ Class student{
     //Methods
 
     function add() {
-        $sql = "INSERT INTO student (firstname, middlename, lastname, suffix, sex, birthday, address, contact, LRN) VALUES 
-        (:firstname, :middlename, :lastname, :suffix, :sex, :birthday, :address, :contact, :LRN)";
+        $sql = "INSERT INTO faculty (firstname, middlename, lastname, teacher_position, employee_id) VALUES 
+        (:firstname, :middlename, :lastname, :teacher_position, :employee_id)";
     
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':middlename', $this->middlename);
         $query->bindParam(':lastname', $this->lastname);
-        $query->bindParam(':suffix', $this->suffix);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':birthday', $this->birthday);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':contact', $this->contact); 
-        $query->bindParam(':LRN', $this->LRN);
+        $query->bindParam(':teacher_position', $this->teacher_position);
+        $query->bindParam(':employee_id', $this->employee_id); 
+
         
         if ($query->execute()) {
             return true;
@@ -48,18 +41,15 @@ Class student{
     }
 
     function edit(){
-        $sql = "UPDATE student SET firstname=:firstname, middlename=:middlename, lastname=:lastname, suffix=:suffix, sex=:sex, birthday=:birthday, address=:address, contact=:contact WHERE id = :id;";
+        $sql = "UPDATE faculty SET firstname=:firstname, middlename=:middlename, lastname=:lastname, teacher_position=:teacher_position, employee_id=:employee_id WHERE faculty_id = :faculty_id;";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':middlename', $this->middlename);
         $query->bindParam(':lastname', $this->lastname);
-        $query->bindParam(':suffix', $this->suffix);
-        $query->bindParam(':sex', $this->sex);
-        $query->bindParam(':birthday', $this->birthday);
-        $query->bindParam(':address', $this->address);
-        $query->bindParam(':contact', $this->contact);
-        $query->bindParam(':id', $this->id);
+        $query->bindParam(':teacher_position', $this->teacher_position);
+        $query->bindParam(':employee_id', $this->employee_id);
+        $query->bindParam(':faculty_id', $this->faculty_id);
         
         if($query->execute()){
             return true;
@@ -70,9 +60,9 @@ Class student{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM student WHERE id = :id;";
+        $sql = "SELECT * FROM faculty WHERE faculty_id = :faculty_id;";
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':id', $record_id);
+        $query->bindParam(':faculty_id', $record_id);
         if($query->execute()){
             $data = $query->fetch();
         }
@@ -80,7 +70,7 @@ Class student{
     }
 
     function show(){
-        $sql = "SELECT * FROM student ORDER BY lastname ASC, firstname ASC, suffix ASC;";
+        $sql = "SELECT * FROM faculty ORDER BY lastname ASC, firstname ASC, suffix ASC;";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){
@@ -90,7 +80,7 @@ Class student{
     }
 
     function delete($studentId){
-        $sql = "DELETE FROM student WHERE id = :id";
+        $sql = "DELETE FROM faculty WHERE id = :id";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':id', $studentId);
     

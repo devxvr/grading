@@ -32,9 +32,6 @@
                                             <tbody>
                                             <tr>
                                                 <th scope="row"></th>
-                                                
-                                                
-                                                
                                                 <td></td>
                                                 <td></td>
                                                 <td class="text-center">

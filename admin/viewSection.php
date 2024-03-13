@@ -15,7 +15,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="bootstrap-data-table" class="table table-hover table-striped table-bordered">
+                                    <table id="bootstrap-data-table" class="table text-center table-hover table-striped table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -25,7 +25,15 @@
                                             </tr>
                                         </thead>
                                             <tbody>
-                                                                                    
+                                            <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="text-center">
+                                                    <a href="#">
+                                                        <i class="lni lni-pencil" aria-hidden="true" style="color: black;">
+                                                        </i>
+                                                    </a>
+                                                </td>                            
                                             </tbody>
                                     </table>
                                 </div>

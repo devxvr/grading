@@ -36,14 +36,23 @@
                                         <div class="form-group">
                                             <label for="x_card_code" class="control-label mb-1">Grade Level</label>
                                             <select Required name="levelId" class="levelId form-select">
-                                                
+                                            <option value="" >Select Grade</option>
+                                                <option value="" >Grade 7</option>
+                                                <option value="" >Grade 8</option>
+                                                <option value="" >Grade 9</option>
+                                                <option value="" >Grade 10</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="cc-exp" class="control-label mb-1">Section</label>
-                                            
+                                            <select  id="select_sectionId" name="sectionId" class="form-select">
+                                                <option value="" >Select Section</option>
+                                                <option value="" >Section A</option>
+                                                <option value="" >Section B</option>
+                                                <option value="" >Section C</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!-- <div class="col-4">

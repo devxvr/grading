@@ -1,5 +1,5 @@
 <?php
-    $title = 'Section';
+    $title = 'Adviser';
     require_once('../includes/head.php');
 ?>
 <body>

@@ -107,6 +107,29 @@ if(isset($_POST['save'])){
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                            <div class="col-6">
+                                                                <?php 
+                                                                            $query=mysqli_query($con,"select * from tblsection ORDER BY levelId ASC");                        
+                                                                            $count = mysqli_num_rows($query);
+                                                                            if($count > 0){                       
+                                                                                echo ' <select  name="section" class="custom-select form-control">';
+                                                                                echo'<option value="">Select Section</option>';
+                                                                                while ($row = mysqli_fetch_array($query)) {
+                                                                                echo'<option value="'.$row['Id'].'" >'.$row['sectionName'].'</option>';
+                                                                                    }
+                                                                                        echo '</select>';
+                                                                                    }
+                                                                            ?>   
+                                                </div>
+                                                <div class="col-6">
+                                                <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Subject</label>
+                                                        <input id="" name="subj[]" type="text" class="form-control cc-exp" value="" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
 </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

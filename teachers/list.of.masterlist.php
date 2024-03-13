@@ -14,15 +14,15 @@
     
     <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
         <div class="page-title mt-2 ">
-            <h2>Masterlist</h2>
+            <h2>Master List</h2>
         </div>
     </div>
 
 <div class="content">
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title"><h2 align="center">List of Grades in</h2></strong>
-                </div>
+<div class="card mb-3 mt-4">
+        <div class="card-header">
+             <strong class="card-title"><h2 align="center">List of Grades In</h2></strong>
+        </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table  class="table table-hover table-striped table-bordered">
@@ -48,6 +48,7 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
                 </div>
             </div>
 <!-- end of datatable -->

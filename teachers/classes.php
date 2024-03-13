@@ -17,17 +17,16 @@
     
     <div class="card mb-3 mt-4">
         <div  div class="card-body">
-        <div class="col-sm-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-body" style="box-shadow: 0 4px 2px -2px gray;">
-                            <div class="section-handled">       
-                                <h2></h2><h5>Section: </u></h5><!-- Log on to codeastro.com for more projects! -->
-                                <a href="#" title="View Section Details"><i class="las la-info-circle"></i><i><u>View Section</u></i></a>
-                            </div><!-- /.card-left -->
+            <div class="col-sm-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body" style="box-shadow: 0 4px 2px -2px gray;">
+                                <div class="section-handled">       
+                                    <h2></h2><h5>Section: </u></h5><!-- Log on to codeastro.com for more projects! -->
+                                    <a href="#" title="View Section Details"><i class="las la-info-circle"></i><i><u>View Section</u></i></a>
+                                </div><!-- /.card-left -->
+                            </div>
                         </div>
-
-                    </div>
-                </div>                                                
+            </div>                                                
         </div>
     </div>
 </div>

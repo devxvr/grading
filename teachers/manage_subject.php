@@ -1,15 +1,11 @@
 <?php
-require_once("../includes/database.php"); // Include database connection file
-
-// Establish a database connection
+require_once("../includes/database.php");
 $db = new Database();
 $conn = $db->connect();
 
-// Check if the subject ID is set in the URL
 if(isset($_GET['id'])){
-    // Retrieve subject details from the database based on the subject ID
+    
     $qry = $conn->query("SELECT * FROM `subjects` where subject_id = '{$_GET['id']}'");
-    // Fetch the subject details
     foreach($qry->fetch(PDO::FETCH_ASSOC) as $k => $v){
         $$k = $v;
     }

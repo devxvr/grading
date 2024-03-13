@@ -7,30 +7,27 @@ $database = new Database();
 $conn = $database->connect();
 
 $class = new class_list();
-$section = new Section(); // Create an instance of the Section class
+$section = new Section(); 
 
-// Fetch class data from the database along with subject name
+
 $sql = "SELECT c.class_id, c.grade, c.section, s.name AS subject_name 
         FROM class_list c 
         INNER JOIN subjects s ON c.subject_id = s.subject_id";
 
 $stmt = $conn->query($sql);
 
-// Check for errors during SQL execution
+
 if (!$stmt) {
     echo "Error executing SQL query: " . $conn->errorInfo()[2];
     exit;
 }
 
 $classArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Check if $classArray is empty
 if (empty($classArray)) {
     echo "No classes found";
     exit;
 }
 
-// Fetch all grades and sections
 $grades = $section->fetchAllGrades();
 $sections = $section->fetchAllSections();
 ?>
@@ -82,7 +79,6 @@ $sections = $section->fetchAllSections();
 </main>
 <script src="../assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
 <script>
-    // JavaScript to handle class deletion
     document.querySelectorAll('.delete-class').forEach(btn => {
         btn.addEventListener('click', function() {
             if (confirm('Are you sure you want to delete this class?')) {

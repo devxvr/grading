@@ -37,7 +37,6 @@ $marks_qry = $markList->fetchMarks($_GET['class_id'], $_GET['section'], $_GET['a
 
 
 
-// Fetch all classes and assessments for the dropdowns
 $classes = $classList->show();
 $assessments = $assessmentList->show($_GET['class_id'] ?? null);
 
@@ -89,7 +88,7 @@ $assessments = $assessmentList->show($_GET['class_id'] ?? null);
         <input type="hidden" name="class_id" value="<?php echo $_GET['class_id']; ?>">
         <input type="hidden" name="assessment_id" value="<?php echo $_GET['assessment_id']; ?>">
         <div class="row">
-            <!-- Class and Assessment Info Here -->
+           
             <div class="col-md-12 py-3">
                 <table class="table table-striped table-hover">
                     <thead>

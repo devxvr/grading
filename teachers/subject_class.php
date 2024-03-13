@@ -12,8 +12,7 @@ class subjects {
     function __construct() {
         $this->db = new Database();
     }
-
-    // Method to fetch component details from the database based on subject_id
+    
     function get_component($subject_id) {
         $query = "SELECT * FROM subjects WHERE subject_id = :subject_id";
         $stmt = $this->db->connect()->prepare($query);
@@ -22,7 +21,6 @@ class subjects {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Method to edit component details in the database
     public function edit() {
         $query = "UPDATE subjects SET name = :name WHERE subject_id = :subject_id";
         $stmt = $this->db->connect()->prepare($query);
@@ -31,7 +29,6 @@ class subjects {
         return $stmt->execute();
     }
 
-    // Method to delete a component
     public function delete($subject_id) {
         $query = "DELETE FROM subjects WHERE subject_id = :subject_id";
         $stmt = $this->db->connect()->prepare($query);

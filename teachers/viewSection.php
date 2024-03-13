@@ -1,7 +1,7 @@
 <?php
 $title = 'Section';
 require_once('../includes/head.php');
-require_once('../includes/database.php'); // Include database connection
+require_once('../includes/database.php'); 
 
 ?>
 
@@ -19,7 +19,6 @@ require_once('../includes/database.php'); // Include database connection
         
                     $section = new section();
 
-                    // Fetch section data (you should modify this to retrieve data from your database)
                     $sectionArray = $section->show();
                     $counter = 1;
                         

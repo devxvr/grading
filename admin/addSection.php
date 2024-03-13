@@ -1,5 +1,5 @@
 <?php
-require_once './section-class.php';
+require_once '../classes/section-class.php';
 
 
 function validate_field($value) {

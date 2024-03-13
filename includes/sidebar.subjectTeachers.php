@@ -1,6 +1,6 @@
 
 <div class="header">
-  <a href="#default" class="logo">Loyola</a>
+  <a href="#default" class="logo">Loyola High School</a>
   <div class="header-right">
     
   </div>

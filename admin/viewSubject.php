@@ -22,25 +22,51 @@
                                 <div class="table-responsive">
                                     <table id="bootstrap-data-table" class="table table-hover text-center table-striped table-bordered">
                                         <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Grade Level</th>
-                                                <th>Subject</th>
-                                                <th>Actions</th>                                            
-                                            </tr>
+                                        <?php
+                                require_once './subject_class.php';
+                                
+
+                                $subject = new Subjects();
+
+                                // Fetch subject data (you should modify this to retrieve data from your database)
+                                $subjectArray = $subject->show();
+                                
+                                    
+                            ?>
+                                <table id="subject" class="table table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th scope="col">Subject Id</th>
+                                            <th scope="col">Subject Name</th>
+                                            <th scope="col" width="5%">Action</th>
+                                        </tr>
                                         </thead>
                                             <tbody>
-                                            <tr>
-                                                <th scope="row"></th>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="text-center">
-                                                    <a href="#">
-                                                        <i class="lni lni-pencil" aria-hidden="true" style="color: black;">
-                                                        </i>
-                                                    </a>
-                                                </td>
-                                             </tr>                              
+                                            <?php
+                                                if ($subjectArray) {
+                                                    foreach ($subjectArray as $item) {
+                                            ?>
+                                                    <tr>
+                                                        
+                                                        <td>
+                                                            <?= $item['subject_id'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?= $item['name'] ?>
+                                                    </td>
+                                                        <td class="text-center">
+                                                            <a href="edit_subject.php?id=<?= $item['subject_id'] ?>"><i class="lni lni-pencil" aria-hidden="true" style="color: black;">
+                                                                                </i></a>
+                                                                                <a href="delete_subject.php?subject_id=<?= $item['subject_id'] ?>"><i class="lni lni-trash-can" aria-hidden="true" style="color: black;"></i></a>
+
+                                                        </td>
+
+                                                        <?php
+                                                        
+                                                    }
+                                                }
+                                            ?>              
                                             </tbody>
                                     </table>
                                 </div>

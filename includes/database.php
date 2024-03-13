@@ -5,7 +5,7 @@ class Database {
     private $host = 'localhost';
     private $username = 'root';
     private $password = '';
-    private $database = 'grading';
+    private $database = 'gradingsystem';
     protected $connection;
 
     function __construct() {

@@ -1,6 +1,6 @@
 <?php
-    require_once '../includes/student-class.php';
-    require_once '../includes/functions.php';
+    require_once '../classes/student-class.php';
+    require_once '../classes/functions.php';
     
     
     

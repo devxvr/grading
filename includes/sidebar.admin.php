@@ -49,7 +49,7 @@
                     </a>
                     <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="createSection.php" class="sidebar-link">Add Section</a>
+                            <a href="addSection.php" class="sidebar-link">Add Section</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewSection.php" class="sidebar-link">View Section</a>

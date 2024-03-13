@@ -19,12 +19,12 @@
                 <strong class="card-title"><h2 align="center">All Student</h2></strong>
             </div>
             <div  div class="card-body">
-            <div class="col-sm-6 col-lg-5">
+            <div class="col-12">
                 
                         <div class="card mb-3">
                             <div class="card-body" style="box-shadow: 0 4px 2px -2px gray;">
                                 <div class="section-handled">       
-                                    <h2></h2><h5>Grade Level: </u></h5><!-- Log on to codeastro.com for more projects! -->
+                                    <h2></h2><h5>Grade 7 </u></h5><!-- Log on to codeastro.com for more projects! -->
                                     <a href="#" title="View Section Details"><i class="las la-info-circle"></i><i><u>View Grade Level</u></i></a>
                                 </div><!-- /.card-left -->
                             </div>
@@ -32,7 +32,7 @@
                         <div class="card mb-3">
                             <div class="card-body" style="box-shadow: 0 4px 2px -2px gray;">
                                 <div class="section-handled">       
-                                    <h2></h2><h5>Grade Level: </u></h5><!-- Log on to codeastro.com for more projects! -->
+                                    <h2></h2><h5>Grade 8 </u></h5><!-- Log on to codeastro.com for more projects! -->
                                     <a href="#" title="View Section Details"><i class="las la-info-circle"></i><i><u>View Grade Level</u></i></a>
                                 </div><!-- /.card-left -->
                             </div>
@@ -42,7 +42,7 @@
                         <div class="card mb-3">
                             <div class="card-body" style="box-shadow: 0 4px 2px -2px gray;">
                                 <div class="section-handled">       
-                                    <h2></h2><h5>Grade Level: </u></h5><!-- Log on to codeastro.com for more projects! -->
+                                    <h2></h2><h5>Grade 9 </u></h5><!-- Log on to codeastro.com for more projects! -->
                                     <a href="#" title="View Section Details"><i class="las la-info-circle"></i><i><u>View Grade Level</u></i></a>
                                 </div><!-- /.card-left -->
                             </div>
@@ -50,7 +50,7 @@
                         <div class="card mb-3">
                             <div class="card-body" style="box-shadow: 0 4px 2px -2px gray;">
                                 <div class="section-handled">       
-                                    <h2></h2><h5>Grade Level: </u></h5><!-- Log on to codeastro.com for more projects! -->
+                                    <h2></h2><h5>Grade 10 </u></h5><!-- Log on to codeastro.com for more projects! -->
                                     <a href="#" title="View Section Details"><i class="las la-info-circle"></i><i><u>View Grade Level</u></i></a>
                                 </div><!-- /.card-left -->
                             </div>

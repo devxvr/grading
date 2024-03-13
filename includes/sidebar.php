@@ -23,10 +23,19 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="masterlist.php" class="sidebar-link">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#addStudent" aria-expanded="false" aria-controls="addStudent">
                         <i class="lni lni-layers"></i>
                         <span>Master List</span>
                     </a>
+                    <ul id="addStudent" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="masterlist.php" class="sidebar-link">View Student</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="addStudentAdv.php" class="sidebar-link">Add Student</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="classes.php" class="sidebar-link">

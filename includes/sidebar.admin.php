@@ -71,7 +71,7 @@
                     </a>
                     <ul id="subject" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="add_Subject.php" class="sidebar-link">Add Subject</a>
+                            <a href="../teachers/maintenance.php" class="sidebar-link">Add Subject</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewSubject.php" class="sidebar-link">View Subject</a>

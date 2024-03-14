@@ -1,20 +1,27 @@
 <?php
-require_once("./subject_class.php");
+require_once './subject_class.php';
 
-if(isset($_GET['id'])) {
-    $subject = new subjects();
-    $subjectId = $_GET['id'];
+$subject = new subjects();
 
-    if($subject->delete($subjectId)) {
-        // Delete successful
-        header("Location: maintenance.php");
-        exit();
+// Check if subject_id is provided
+if(isset($_GET['subject_id'])) {
+    $subject_id = $_GET['subject_id'];
+
+    
+    if($subject->isSubjectExists($subject_id)) {
+        if($subject->delete($subject_id)) {
+            header('Location: viewsubject.php');
+            exit();
+        } else {
+            echo "Failed to delete the subject.";
+            exit();
+        }
     } else {
-        // Delete failed
-        echo "Failed to delete subject. Please try again.";
+        echo "Subject not found.";
+        exit();
     }
 } else {
-    // Invalid request, no subject ID provided
-    echo "Invalid request. No subject ID provided.";
+    echo "Subject ID not provided.";
+    exit();
 }
 ?>

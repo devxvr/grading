@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="calendar.php" class="sidebar-link">
+                    <a href="../teachers/class.php" class="sidebar-link">
                         <i class="lni lni-calendar"></i>
                         <span>Calendar</span>
                     </a>

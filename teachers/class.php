@@ -1,5 +1,8 @@
+
+
+
+
 <?php
-require_once './manage_class.php';
 require_once './class-class.php';
 require_once './section-class.php'; 
 
@@ -32,18 +35,30 @@ $grades = $section->fetchAllGrades();
 $sections = $section->fetchAllSections();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.css">
-    <title>Classes</title>
-</head>
+
+<?php
+    $title = 'Home';
+    require_once('../includes/head.php');
+?>
+
 <body>
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5">
-    <div id="table-container">
+<?php
+    require_once('../includes/sidebar.php');
+?> 
+<div class="main p-3">
+
+    <div class="card bg-gray-500 text-dark" style="box-shadow: 0 4px 2px -2px gray;">
+        <div class="page-title mt-2 ">
+            <h2>Calendar</h2>
+        </div>
+    </div>
+    
+    <div class="card mb-3 mt-4">
+        <div  div class="card-body">
+        <?php
+    require_once './manage_class.php';
+    ?>
+        <div id="table-container">
         <table id="class" class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -76,7 +91,9 @@ $sections = $section->fetchAllSections();
             </tbody>
         </table>
     </div>
-</main>
+        </div>
+    </div>
+</div>
 <script src="../assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
 <script>
     document.querySelectorAll('.delete-class').forEach(btn => {
@@ -89,4 +106,8 @@ $sections = $section->fetchAllSections();
     });
 </script>
 </body>
+<?php
+    
+    require_once('../includes/script.js.php');
+?>
 </html>

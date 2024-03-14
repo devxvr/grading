@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <body>
     <main>
-        <form action="index.php" method="post">
+        <form action="./admin/dashboard.php" method="post">
         <section class="box">
             <div class="content">
                 <div class="all">

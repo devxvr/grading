@@ -36,7 +36,7 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="addStudentadv.php" class="sidebar-link">Add Student</a>
+                            <a href="addStudent.php" class="sidebar-link">Add Student</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewStudent.php" class="sidebar-link">View Student</a>

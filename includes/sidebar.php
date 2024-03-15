@@ -1,6 +1,7 @@
 
 <div class="header">
-  <a href="#default" class="logo">Loyola</a>
+    
+  <a href="dashboard.php" class="logo">Loyola High School</a>
   <div class="header-right">
     
   </div>
@@ -23,15 +24,30 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="masterlist.php" class="sidebar-link">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#addStudent" aria-expanded="false" aria-controls="addStudent">
                         <i class="lni lni-layers"></i>
                         <span>Master List</span>
                     </a>
+                    <ul id="addStudent" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="masterlist.php" class="sidebar-link">View Student</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="addStudentAdv.php" class="sidebar-link">Add Student</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="classes.php" class="sidebar-link">
                         <i class="lni lni-users"></i>
                         <span>Classes</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="maintenance.php" class="sidebar-link">
+                        <i class="lni lni-protection"></i>
+                        <span>Maintenance</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -41,7 +57,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="calendar.php" class="sidebar-link">
+                    <a href="../teachers/class.php" class="sidebar-link">
                         <i class="lni lni-calendar"></i>
                         <span>Calendar</span>
                     </a>

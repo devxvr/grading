@@ -1,6 +1,6 @@
 
 <div class="header">
-  <a href="#default" class="logo">Loyola</a>
+  <a href="#default" class="logo">Loyola High School</a>
   <div class="header-right">
     
   </div>
@@ -16,10 +16,16 @@
                 </div>
             </div>
             <ul class="sidebar-nav">
-            <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="dashboard.php" class="sidebar-link">
                         <i class="lni lni-home"></i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="schoolyear.php" class="sidebar-link">
+                        <i class="lni lni-database"></i>
+                        <span>School Year</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -35,9 +41,6 @@
                         <li class="sidebar-item">
                             <a href="viewStudent.php" class="sidebar-link">View Student</a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="deleteStudent.php" class="sidebar-link">Delete Student</a>
-                        </li>
                     </ul>
                 </li>
                 
@@ -49,7 +52,7 @@
                     </a>
                     <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="createSection.php" class="sidebar-link">Add Section</a>
+                            <a href="addSection.php" class="sidebar-link">Add Section</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewSection.php" class="sidebar-link">View Section</a>
@@ -68,7 +71,7 @@
                     </a>
                     <ul id="subject" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="addSubject.php" class="sidebar-link">Add Subject</a>
+                            <a href="../teachers/maintenance.php" class="sidebar-link">Add Subject</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="viewSubject.php" class="sidebar-link">View Subject</a>
@@ -111,12 +114,6 @@
                             <a href="subjectHandled.php" class="sidebar-link">Subject Handled</a>
                         </li>
                     </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-protection"></i>
-                        <span>Maintenance</span>
-                    </a>
                 </li>
             </ul>
             <div class="sidebar-footer">

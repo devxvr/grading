@@ -1,4 +1,40 @@
 <?php
+
+function validate_field($value) {
+   
+    if(empty($value)) {
+        return false; 
+    } else {
+        return true; 
+    }
+}
+
+
+require_once '../classes/faculty-class.php';
+if(isset($_POST['save'])){
+    $faculty = new faculty();
+    $faculty->lastname = htmlentities($_POST['lastname']);
+    $faculty->firstname = htmlentities($_POST['firstname']);
+    $faculty->middlename = htmlentities($_POST['middlename']);
+    $faculty->employee_id = htmlentities($_POST['employee_id']);
+    $faculty->teacher_position = htmlentities($_POST['teacher_position']);
+    
+    // Validate the fields
+    if (validate_field($faculty->lastname) && 
+        validate_field($faculty->firstname) &&
+        validate_field($faculty->employee_id) &&  
+        validate_field($faculty->teacher_position)){
+        if($faculty->add()){
+            header('location: admin-staff.php');
+        } else {
+            echo 'An error occurred while adding in the database.';
+        }
+    } else {
+        echo 'Please fill in all required fields.';
+    }
+}
+?>
+<?php
     $title = 'Faculty';
     require_once('../includes/head.php');
 ?>
@@ -25,19 +61,19 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Last Name:</label>
-                                                        <input id="last" name="lname" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
+                                                        <input id="last" name="lastname" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">First Name:</label>
-                                                        <input id="first" name="fname" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
+                                                        <input id="first" name="firstname" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Middle Name:</label>
-                                                        <input id="middle" name="mname" type="tel" class="form-control cc-exp" value="" placeholder="">
+                                                        <input id="middle" name="middlename" type="tel" class="form-control cc-exp" value="" placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -45,14 +81,14 @@
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Employee ID:</label>
-                                                        <input id="" name="fid" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
+                                                        <input id="" name="employee_id" type="tel" class="form-control cc-exp" value="" Required data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="">
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="cc-exp" class="control-label mb-1">Teacher Position:</label>
-                                                            <select  name="designation" id="designation" class="form-select">
+                                                            <select  name="teacher_position" id="designation" class="form-select">
                                                                 <option value="">Select Position</option>
                                                                 <option value="Instructor I">Instructor I</option>
                                                                 <option value="Instructor II">Instructor II</option>
@@ -71,10 +107,33 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                            <div class="col-6">
+                                                                <?php 
+                                                                            $query=mysqli_query($con,"select * from tblsection ORDER BY levelId ASC");                        
+                                                                            $count = mysqli_num_rows($query);
+                                                                            if($count > 0){                       
+                                                                                echo ' <select  name="section" class="custom-select form-control">';
+                                                                                echo'<option value="">Select Section</option>';
+                                                                                while ($row = mysqli_fetch_array($query)) {
+                                                                                echo'<option value="'.$row['Id'].'" >'.$row['sectionName'].'</option>';
+                                                                                    }
+                                                                                        echo '</select>';
+                                                                                    }
+                                                                            ?>   
+                                                </div>
+                                                <div class="col-6">
+                                                <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Subject</label>
+                                                        <input id="" name="subj[]" type="text" class="form-control cc-exp" value="" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
 </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-primary me-md-2" type="button">Add</button>
+  <button class="btn btn-primary me-md-2" type="submit" name="save">Add</button>
   <button class="btn btn-danger" type="button">Cancel</button>
 </div>
 </body>

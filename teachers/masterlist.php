@@ -1,6 +1,24 @@
 <?php
     $title = 'Home';
     require_once('../includes/head.php');
+    require_once('../includes/student-class.php'); 
+
+    
+    $student = new Student();
+
+    
+    $students = $student->fetchAllStudents();
+
+    function calculateAge($birthdate) {
+        
+        $today = new DateTime(date('Y-m-d'));
+        $birthDate = new DateTime($birthdate);
+    
+        $diff = $today->diff($birthDate);
+    
+        return $diff->y;
+    }
+
 ?>
 
 <body>
@@ -35,22 +53,21 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($students as $student): ?>
                 <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th scope="row"><?= $student['student_id'] ?></th>
+                <td><?= $student['firstname'] . ' ' . $student['middlename'] . ' ' . $student['lastname'] . ' ' . $student['suffix'] ?></td>
+                <td><?= $student['sex'] ?></td>
+                <td><?= calculateAge($student['birthday']) ?></td> <!-- You need to define the calculateAge function -->
+                <td><?= $student['address'] ?></td>
+                <td><?= $student['contact'] ?></td>
                 <td class="text-center">
                     <a href="#">
-                        <i class="lni lni-pencil" aria-hidden="true" style="color: black;">
-                        </i>
+                        <i class="lni lni-pencil" aria-hidden="true" style="color: black;"></i>
                     </a>
                 </td>
                 </tr>
-                
-                
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
@@ -72,14 +89,9 @@
     </div>
 </div>
 
-</div>
-    <main>
-        
-    </main>
 </body>
 
 <?php
-    
     require_once('../includes/script.js.php');
 ?>
 </html>

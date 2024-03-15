@@ -1,6 +1,6 @@
 <?php
-    require_once '../includes/student-class.php';
-    require_once '../includes/functions.php';
+    require_once '../classes/student-class.php';
+    require_once '../classes/functions.php';
     
     
     
@@ -168,14 +168,65 @@
                                                                 }
                                                             ?>
                                                     </div>
+                                                    
+                                                </div>
+                                               </div>
+                            </div>
+                            
+        <div  div class="card-body">
+            
+        <h3>Secondary Details</h3> <hr color="black">
+                                        <div class="row">                       
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Father's Name</label>
+                                                    <input id="father" name="father" type="text" class="form-control cc-exp" value="<?= isset($_POST['father']) ? $_POST['father'] : ''; ?>"  placeholder="">
                                                 </div>
                                             </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Contact Number</label>
+                                                    <input id="fathernum" name="fathernum" type="phone" maxlength="11" minlength="11" class="form-control cc-exp" value="<?= isset($_POST['fathernum']) ? $_POST['fathernum'] : ''; ?>"   placeholder="">
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Mother's Name</label>
+                                                    <input id="mother" name="mother" type="text" class="form-control cc-exp" value="<?= isset($_POST['mother']) ? $_POST['mother'] : ''; ?>"   placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Contact Number</label>
+                                                    <input id="mothernum" name="mothernum" type="phone" maxlength="11" minlength="11" class="form-control cc-exp" value="<?= isset($_POST['mothernum']) ? $_POST['mothernum'] : ''; ?>"  placeholder="">
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="cc-exp" class="control-label mb-1">Guardian's Name <span style="color:red;">*</span></label>
+                                                <input id="guardian" name="guardian" type="text" class="form-control cc-exp" value="<?= isset($_POST['guardian']) ? $_POST['guardian'] : ''; ?>" Required data-val="true" data-val-required="Please enter the security code" data-val-cc-exp="Please enter a valid security code" placeholder="">
+                                                </div>
+                                            </div>  
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="x_card_code" class="control-label mb-1">Contact Number <span style="color:red;">*</span></label>
+                                                <input id="guardiannum" name="guardiannum" type="phone" maxlength="11" minlength="11" class="form-control cc-exp" value="<?= isset($_POST['guardiannum']) ? $_POST['guardiannum'] : ''; ?>" Required data-val="true" data-val-required="Please enter the security code" data-val-cc-exp="Please enter a valid security code" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div>
+                                            <button type="submit" name="submit" class="btn btn-primary mt-3">Add New Student</button>
+                                        </div>
+                                    </form>
+                                </div>
+        </div>
+    </div>
 </div>
-</div>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-primary me-md-2" type="submit" name="save">Add</button>
-  <button class="btn btn-danger" type="button">Cancel</button>
-</div>
+
 </body>
 <?php
     

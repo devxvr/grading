@@ -2,15 +2,17 @@
 
 require_once '../includes/database.php';
 
-Class admin_list{
+Class teacher_list{
     //attributes
 
-    public $admin_id;
+    public $teacher_id;
     public $firstname;
     public $lastname;
     public $middlename;
     public $email;
-    
+    public $department;
+    public $gender;
+    public $contact;
     public $password;
     
 
@@ -24,14 +26,17 @@ Class admin_list{
     //Methods
 
     function add(){
-        $sql = "INSERT INTO admin_list (firstname, lastname, middlename, email, password) VALUES 
-                (:firstname, :lastname, :middlename, :email, :password)";
+        $sql = "INSERT INTO teacher_list (firstname, lastname, middlename, email, department, gender, contact, password) VALUES 
+                (:firstname, :lastname, :middlename, :email, :department, :gender, :contact, :password)";
     
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':lastname', $this->lastname);
         $query->bindParam(':middlename', $this->middlename);
         $query->bindParam(':email', $this->email);
+        $query->bindParam(':department', $this->department);
+        $query->bindParam(':gender', $this->gender);
+        $query->bindParam(':contact', $this->contact);
         $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
         $query->bindParam(':password', $hashedPassword);
     
@@ -45,14 +50,17 @@ Class admin_list{
     
 
     function edit(){
-        $sql = "UPDATE admin_list SET firstname=:firstname, lastname=:lastname, middlename=:middlename, email=:email WHERE admin_id = :admin_id;";
+        $sql = "UPDATE teacher_list SET firstname=:firstname, lastname=:lastname, middlename=:middlename, email=:email, department=:department, gender=:gender, contact=:contact WHERE teacher_id = :teacher_id;";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':lastname', $this->lastname);
         $query->bindParam(':middlename', $this->middlename);
         $query->bindParam(':email', $this->email);
-        $query->bindParam(':admin_id', $this->admin_id);
+        $query->bindParam(':department', $this->department);
+        $query->bindParam(':gender', $this->gender);
+        $query->bindParam(':contact', $this->contact);
+        $query->bindParam(':teacher_id', $this->teacher_id);
         
         if($query->execute()){
             return true;
@@ -63,9 +71,9 @@ Class admin_list{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM admin_list WHERE admin_id = :admin_id;";
+        $sql = "SELECT * FROM teacher_list WHERE teacher_id = :teacher_id;";
         $query=$this->db->connect()->prepare($sql);
-        $query->bindParam(':admin_id', $record_id);
+        $query->bindParam(':teacher_id', $record_id);
         if($query->execute()){
             $data = $query->fetch();
         }
@@ -73,7 +81,7 @@ Class admin_list{
     }
 
     function show(){
-        $sql = "SELECT * FROM admin_list ORDER BY lastname ASC, firstname ASC;";
+        $sql = "SELECT * FROM teacher_list ORDER BY lastname ASC, firstname ASC;";
         $query=$this->db->connect()->prepare($sql);
         $data = null;
         if($query->execute()){
@@ -83,7 +91,7 @@ Class admin_list{
     }
 
     function is_email_exist(){
-        $sql = "SELECT * FROM admin_list WHERE email = :email;";
+        $sql = "SELECT * FROM teacher_list WHERE email = :email;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':email', $this->email);
         if($query->execute()){
@@ -94,9 +102,9 @@ Class admin_list{
         return false;
     }
     function delete($staffId){
-        $sql = "DELETE FROM admin_list WHERE admin_id = :admin_id";
+        $sql = "DELETE FROM teacher_list WHERE teacher_id = :teacher_id";
         $query = $this->db->connect()->prepare($sql);
-        $query->bindParam(':admin_id', $staffId);
+        $query->bindParam(':teacher_id', $staffId);
     
         if($query->execute()){
             return true;

@@ -1,12 +1,12 @@
 <?php
     
-    require_once './adminlist-class.php';
+    require_once './teacherlist-class.php';
     require_once  './functions.php';
 
     
     //  session_start();
      
-    //  if (!isset($_SESSION['user']) || $_SESSION['user'] != 'admin'){
+    //  if (!isset($_SESSION['user']) || $_SESSION['user'] != 'teacher'){
     //     header('location: ./login.php');
     //  }
     
@@ -14,24 +14,31 @@
 
     if(isset($_POST['save'])){
 
-        $admin = new admin_list();
+        $teacher = new teacher_list();
         //sanitize
-        $admin->firstname = htmlentities($_POST['firstname']);
-        $admin->middlename = htmlentities($_POST['middlename']);
-        $admin->lastname = htmlentities($_POST['lastname']);
-        $admin->email = htmlentities($_POST['email']);
-        $admin->password = htmlentities($_POST['password']);
+        $teacher->firstname = htmlentities($_POST['firstname']);
+        $teacher->middlename = htmlentities($_POST['middlename']);
+        $teacher->lastname = htmlentities($_POST['lastname']);
+        $teacher->email = htmlentities($_POST['email']);
+        $teacher->password = htmlentities($_POST['password']);
+        $teacher->department = htmlentities($_POST['department']);
+        $teacher->gender = htmlentities($_POST['gender']);
+        $teacher->contact = htmlentities($_POST['contact']);
+        
         
 
         //validate
-        if (validate_field($admin->firstname) &&
-        validate_field($admin->lastname) &&
-        validate_field($admin->email) &&
-        validate_field($admin->password) &&
-        validate_password($admin->password) &&
-        validate_email($admin->email) && !$admin->is_email_exist()){
-            if($admin->add()){
-                header('location: admin-admin.php');
+        if (validate_field($teacher->firstname) &&
+        validate_field($teacher->lastname) &&
+        validate_field($teacher->email) &&
+        validate_field($teacher->department) &&
+        validate_field($teacher->gender) &&
+        validate_field($teacher->contact) &&
+        validate_field($teacher->password) &&
+        validate_password($teacher->password) &&
+        validate_email($teacher->email) && !$teacher->is_email_exist()){
+            if($teacher->add()){
+                header('location: teacher-teacher.php');
             }else{
                 echo 'An error occured while adding in the database.';
             }
@@ -39,7 +46,7 @@
     }
 ?>
 <?php
-$title = 'Admin';
+$title = 'teacher';
 require_once '../includes/head.php';
 ?>
 
@@ -49,8 +56,8 @@ require_once('../includes/sidebar.admin.php');
 ?>  
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="col-12 col-lg-6 d-flex justify-content-between align-items-center">
-            <h2 class="h3 brand-color pt-3 pb-2">Add Admin</h2>
-            <a href="admin.php" class="text-primary text-decoration-none"><i class="fa fa-arrow-left"
+            <h2 class="h3 brand-color pt-3 pb-2">Add teacher</h2>
+            <a href="teacher.php" class="text-primary text-decoration-none"><i class="fa fa-arrow-left"
                     aria-hidden="true"></i> Back</a>
         </div>
         <div class="col-12 col-lg-6">
@@ -84,13 +91,43 @@ require_once('../includes/sidebar.admin.php');
                                     }
                                 ?>
                 </div>
+                <div class="mb-3" style="color: black;">
+                            <label for="gender" class="form-label">Gender</label>
+                            <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0">
+                                <select name="gender" id="gender" class="form-select me-md-2">
+                                    <option value="">Select Option</option>
+                                    <?php echo getGenderOptions(isset($_POST['gender']) ? $_POST['gender'] : null); ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3" style="color: black;">
+                            <label for="department" class="form-label">Select Department </label>
+                            <div class="form-group col-12 col-sm-auto flex-sm-grow-1 flex-lg-grow-0">
+                                <select name="department" id="department" class="form-select me-md-2">
+                                    <option value="">Select Option</option>
+                                    <?php echo getDepartmentOptions(isset($_POST['department']) ? $_POST['department'] : null); ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                    <label for="contact" class="form-label">Contact Number</label>
+                    <input type="text" class="form-control" id="contact" name="contact" required
+                        value="<?php if(isset($_POST['contact'])) { echo $_POST['contact']; } ?>">
+                    <?php
+                                    if(isset($_POST['contact']) && !validate_field($_POST['contact'])){
+                                ?>
+                    <p class="text-danger my-1">Contact Number is required</p>
+                    <?php
+                                    }
+                                ?>
+                </div>
                 
                 <div class="mb-2">
                 <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" required
                         value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>">
                     <?php
-                                    $new_staff = new admin_list();
+                                    $new_staff = new teacher_list();
                                     if(isset($_POST['email'])){
                                          $new_staff->email = htmlentities($_POST['email']);
                                     }else{
@@ -117,7 +154,7 @@ require_once('../includes/sidebar.admin.php');
                 </div>
 
                 <button type="submit" name="save" class="btn btn-primary mt-2 mb-3 brand-bg-color"
-                    id="addStaffButton">Add Admin</button>
+                    id="addStaffButton">Add teacher</button>
             </form>
         </div>
     </main>

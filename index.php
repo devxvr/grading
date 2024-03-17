@@ -1,26 +1,29 @@
-
-
-
-
-
 <?php
-session_start();
-error_reporting(0);
-include('./includes/dbconnection.php');
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Validate credentials (you'll need to implement this part)
-    if (validate_user_credentials($username, $password)) {
-        // Redirect to a protected page (e.g., dashboard.php)
-        header('Location: ./admin/dashboard.php');
-        exit;
-    } else {
-        $error_message = 'Invalid username or password.';
+    //resume session here to fetch session values
+    session_start();
+    /*
+        if user is login then redirect to dashboard page
+    */
+    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
+        header('location: ./admin-dashboard.php');
     }
-}
+
+    //if the login button is clicked
+    require_once('../classes/account.class.php');
+    
+    if (isset($_POST['login'])) {
+        $account = new Account();
+        $account->email = htmlentities($_POST['email']);
+        $account->password = htmlentities($_POST['password']);
+        if ($account->sign_in_staff()){
+            $_SESSION['user'] = 'staff';
+            header('location: ./admin-dashboard.php');
+        }else{
+            $error =  'Invalid email/password. Try again.';
+        }
+    }
+    
+    //if the above code is false then html below will be displayed
 ?>
 
 <?php

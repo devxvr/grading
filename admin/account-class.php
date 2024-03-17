@@ -15,7 +15,7 @@ class Account{
         $this->db = new Database();
     }
 
-    function sign_in_staff(){
+    function sign_in_admin(){
         $sql = "SELECT * FROM admin_list WHERE email = :email";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':email', $this->email);
@@ -33,8 +33,8 @@ class Account{
     }
     
 
-    function sign_in_customer(){
-        $sql = "SELECT * FROM customer WHERE email = :email LIMIT 1;";
+    function sign_in_teacher(){
+        $sql = "SELECT * FROM teacher WHERE email = :email LIMIT 1;";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':email', $this->email);
     

@@ -1,4 +1,16 @@
+<?php
+    $title = 'Home';
+    require_once('../includes/head.php');
+?>
 
+<?php
+    require_once('../includes/sidebar.php');
+?>
+
+
+
+
+<body>
 <?php
 include_once './manage_assessments.php';
 include_once './assessment-class.php';
@@ -12,19 +24,8 @@ $assessment = new assessment_list();
 $assessmentArray = $assessment->show();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.css">
-    <title>Assessment</title>
-</head>
-<body>
 
-
-<main class="col-md-10 ms-sm-auto col-lg-12 py-5">
+<div class="main p-3">
     <a href="./manage_assessments.php">Add New</a>
     <div id="table-container">
         <table id="user" class="table table-striped table-sm" style="margin-left:50px;">
@@ -94,7 +95,7 @@ $assessmentArray = $assessment->show();
             </tbody>
         </table>
     </div>
-</main>
+    </div>
 <script src="../assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

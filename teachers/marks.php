@@ -1,4 +1,13 @@
 <?php
+    $title = 'Home';
+    require_once('../includes/head.php');
+?>
+
+<?php
+    require_once('../includes/sidebar.php');
+?>
+
+<?php
 require_once './class-class.php'; 
 require_once './assessment-class.php'; 
 require_once './mark-class.php'; 

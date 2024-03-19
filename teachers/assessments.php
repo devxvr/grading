@@ -25,10 +25,10 @@ $assessmentArray = $assessment->show();
 ?>
 
 
-<div class="main p-3">
+<div class="main p-2 w-75">
     <a href="./manage_assessments.php">Add New</a>
     <div id="table-container">
-        <table id="user" class="table table-striped table-sm" style="margin-left:50px;">
+        <table id="user" class="table table-striped table-sm" style="margin-left:0px;">
             <thead>
                 <tr>
                     <th scope="col">#</th>

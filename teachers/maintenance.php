@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <?php
 require_once('../includes/database.php');
 require_once './component_class.php';

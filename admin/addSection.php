@@ -75,7 +75,6 @@ require_once('../includes/sidebar.admin.php');
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary me-md-2" type="submit" name="save">Add</button>
-        <button class="btn btn-danger" type="button">Cancel</button>
     </div>
 </div>
 </body>

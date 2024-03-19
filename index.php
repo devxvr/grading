@@ -1,30 +1,3 @@
-<?php
-    //resume session here to fetch session values
-    session_start();
-    /*
-        if user is login then redirect to dashboard page
-    */
-    if (isset($_SESSION['user']) && $_SESSION['user'] == 'staff'){
-        header('location: ./admin-dashboard.php');
-    }
-
-    //if the login button is clicked
-    require_once('../classes/account.class.php');
-    
-    if (isset($_POST['login'])) {
-        $account = new Account();
-        $account->email = htmlentities($_POST['email']);
-        $account->password = htmlentities($_POST['password']);
-        if ($account->sign_in_staff()){
-            $_SESSION['user'] = 'staff';
-            header('location: ./admin-dashboard.php');
-        }else{
-            $error =  'Invalid email/password. Try again.';
-        }
-    }
-    
-    //if the above code is false then html below will be displayed
-?>
 
 <?php
     $title = 'Home';

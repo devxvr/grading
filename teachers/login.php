@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
     header('location: ./dashboard.php');
-    exit(); // Always exit after redirection
+    exit(); 
 }
 
 require_once('../admin/account-class.php');

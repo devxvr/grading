@@ -34,7 +34,7 @@ class Account{
     
 
     function sign_in_teacher(){
-        $sql = "SELECT * FROM teacher WHERE email = :email LIMIT 1;";
+        $sql = "SELECT * FROM teacher_list WHERE email = :email LIMIT 1;";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':email', $this->email);
     
@@ -42,7 +42,7 @@ class Account{
             $accountData = $query->fetch(PDO::FETCH_ASSOC);
     
             if ($accountData && password_verify($this->password, $accountData['password'])) {
-                $this->id = $accountData['id'];
+                $this->teacher_id = $accountData['teacher_id'];
                 return true;
             }
         }

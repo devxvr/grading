@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
+    header('location: ./login.php');
+    exit(); 
+    
 require_once("../includes/database.php"); // Include database connection file
 
 // Establish a database connection

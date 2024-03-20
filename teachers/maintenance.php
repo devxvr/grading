@@ -1,6 +1,15 @@
 <?php
+
+session_start();
+
+if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
+    header('location: ./login.php');
+    exit(); // Always exit after redirection
+}
+
 require_once('../includes/database.php');
 require_once './component_class.php';
+
 
 $database = new Database(); 
 $conn = $database->connect(); 

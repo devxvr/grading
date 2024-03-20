@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
+    header('location: ./login.php');
+    exit(); // Always exit after redirection
+}
+
 require_once './assessment-class.php'; // Include assessment class definition
 
 // Assuming the Database class and its connect method are defined in another file

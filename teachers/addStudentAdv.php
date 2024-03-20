@@ -223,8 +223,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                        <div>
-                                            <button type="submit" name="save" class="btn btn-primary mt-3">Add New Student</button>
+                                    <div>
+                                            <button type="submit" name="submit" class="btn btn-primary mt-3">Add New Student</button>
                                         </div>
                                     </form>
                                 </div>

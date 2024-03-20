@@ -31,10 +31,10 @@
                     </a>
                     <ul id="addStudent" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="masterlist.php" class="sidebar-link">View Student</a>
+                            <a href="addStudentAdv.php" class="sidebar-link">Add Student</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="addStudentAdv.php" class="sidebar-link">Add Student</a>
+                            <a href="masterlist.php" class="sidebar-link">View Student</a>
                         </li>
                     </ul>
                 </li>

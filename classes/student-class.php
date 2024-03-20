@@ -15,6 +15,12 @@ Class student{
     public $birthday;
     public $address;
     public $LRN;
+    public $father;
+    public $mother;
+    public $guardian;
+    public $fathernum;
+    public $mothernum;
+    public $guardiannum;
 
     protected $db;
 
@@ -26,10 +32,10 @@ Class student{
     //Methods
 
     function add() {
-        $sql = "INSERT INTO student (firstname, middlename, lastname, suffix, sex, birthday, address, contact, LRN) VALUES 
-        (:firstname, :middlename, :lastname, :suffix, :sex, :birthday, :address, :contact, :LRN)";
+        $sql = "INSERT INTO student (firstname, middlename, lastname, suffix, sex, birthday, address, contact, LRN, father, mother, guardian, fathernum, mothernum, guardiannum) VALUES 
+        (:firstname, :middlename, :lastname, :suffix, :sex, :birthday, :address, :contact, :LRN, :father, :mother, :guardian, :fathernum, :mothernum, :guardiannum)";
     
-        $query=$this->db->connect()->prepare($sql);
+        $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':middlename', $this->middlename);
         $query->bindParam(':lastname', $this->lastname);
@@ -39,6 +45,20 @@ Class student{
         $query->bindParam(':address', $this->address);
         $query->bindParam(':contact', $this->contact); 
         $query->bindParam(':LRN', $this->LRN);
+        $query->bindParam(':father', $this->father);
+        $query->bindParam(':mother', $this->mother);
+        $query->bindParam(':guardian', $this->guardian);
+        $query->bindParam(':fathernum', $this->fathernum);
+        $query->bindParam(':mothernum', $this->mothernum);
+        $query->bindParam(':guardiannum', $this->guardiannum);
+        
+        if ($query->execute()) {
+            return true;
+        } else {
+            return false;
+        }   
+    }
+   
         
         if ($query->execute()) {
             return true;

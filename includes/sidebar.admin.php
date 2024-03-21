@@ -17,13 +17,13 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="dashboard.php" class="sidebar-link">
+                    <a href="../admin/index.php" class="sidebar-link">
                         <i class="lni lni-home"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="schoolyear.php" class="sidebar-link">
+                    <a href="../admin/schoolyear.php" class="sidebar-link">
                         <i class="lni lni-database"></i>
                         <span>School Year</span>
                     </a>
@@ -36,10 +36,10 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="addStudent.php" class="sidebar-link">Add Student</a>
+                            <a href="../admin/addStudent.php" class="sidebar-link">Add Student</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="viewStudent.php" class="sidebar-link">View Student</a>
+                            <a href="../admin/viewStudent.php" class="sidebar-link">View Student</a>
                         </li>
                     </ul>
                 </li>
@@ -52,13 +52,13 @@
                     </a>
                     <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="addSection.php" class="sidebar-link">Add Section</a>
+                            <a href="../admin/addSection.php" class="sidebar-link">Add Section</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="viewSection.php" class="sidebar-link">View Section</a>
+                            <a href="../admin/viewSection.php" class="sidebar-link">View Section</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="assignAdviser.php" class="sidebar-link">Assign Adviser</a>
+                            <a href="../admin/assignAdviser.php" class="sidebar-link">Assign Adviser</a>
                         </li>
                     </ul>
                 </li>
@@ -71,16 +71,16 @@
                     </a>
                     <ul id="subject" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="addSubject.php" class="sidebar-link">Add Subject</a>
+                            <a href="../admin/addSubject.php" class="sidebar-link">Add Subject</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="viewSubject.php" class="sidebar-link">View Subject</a>
+                            <a href="../admin/viewSubject.php" class="sidebar-link">View Subject</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="calendar.php" class="sidebar-link">
+                    <a href="../admin/calendar.php" class="sidebar-link">
                         <i class="lni lni-calendar"></i>
                         <span>Calendar</span>
                     </a>
@@ -105,13 +105,13 @@
                     </a>
                     <ul id="faculty" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
-                            <a href="addFaculty.php" class="sidebar-link">Add Faculty</a>
+                            <a href="../admin/addFaculty.php" class="sidebar-link">Add Faculty</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="viewFaculty.php" class="sidebar-link">View Faculty</a>
+                            <a href="../admin/viewFaculty.php" class="sidebar-link">View Faculty</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="subjectHandled.php" class="sidebar-link">Subject Handled</a>
+                            <a href="../admin/subjectHandled.php" class="sidebar-link">Subject Handled</a>
                         </li>
                     </ul>
                 </li>
@@ -123,7 +123,7 @@
                 </a>
             </div>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
+                <a href="../admin/logout.php" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>

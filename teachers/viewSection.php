@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
+    header('location: ./login.php');
+    exit(); // 
 $title = 'Section';
 require_once('../includes/head.php');
 require_once('../includes/database.php'); 

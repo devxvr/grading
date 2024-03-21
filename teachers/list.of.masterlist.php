@@ -1,3 +1,9 @@
+<?php
+if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
+    header('location: ./login.php');
+    exit(); 
+}
+?> 
 <!DOCTYPE html>
 <html lang="en">
 

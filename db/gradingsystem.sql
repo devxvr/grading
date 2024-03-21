@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2024 at 04:28 PM
+-- Generation Time: Mar 20, 2024 at 09:10 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -29,10 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin_list` (
   `admin_id` int(11) NOT NULL,
-  `fullname` text NOT NULL,
-  `username` text NOT NULL,
+  `firstname` text NOT NULL,
+  `middlename` text NOT NULL,
+  `lastname` text NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` text NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 1,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -40,8 +41,8 @@ CREATE TABLE `admin_list` (
 -- Dumping data for table `admin_list`
 --
 
-INSERT INTO `admin_list` (`admin_id`, `fullname`, `username`, `password`, `status`, `date_created`) VALUES
-(1, 'ronald aljas', 'admin', 'admin123', 1, '2024-02-16 12:37:55');
+INSERT INTO `admin_list` (`admin_id`, `firstname`, `middlename`, `lastname`, `email`, `password`, `date_created`) VALUES
+(2, 'ronald', 'Laceda', 'aljas', 'ronaldaljas02@gmail.com', '$2y$10$wTvQ4iepwjv/qX.QG0DX7e52bKlI5V8o2LgB3IojdH1EP2tV1DwxW', '2024-03-17 16:52:44');
 
 -- --------------------------------------------------------
 
@@ -57,14 +58,6 @@ CREATE TABLE `assessment_list` (
   `name` text NOT NULL,
   `hps` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `assessment_list`
---
-
-INSERT INTO `assessment_list` (`assessment_id`, `class_id`, `component_id`, `quarter`, `name`, `hps`) VALUES
-(9, 11, 2, 1, 'Mathematics', 100),
-(10, 11, 2, 1, 'Mathematics', 100);
 
 -- --------------------------------------------------------
 
@@ -109,9 +102,7 @@ CREATE TABLE `class_list` (
 --
 
 INSERT INTO `class_list` (`class_id`, `subject_id`, `grade`, `section`) VALUES
-(11, 2, 'Grade 8', 'Fish'),
-(12, 6, 'Grade 8', 'Isda'),
-(13, 7, 'Grade 10', 'STEM B');
+(27, 11, 'Grade 7', 'Galungong');
 
 -- --------------------------------------------------------
 
@@ -131,21 +122,9 @@ CREATE TABLE `component_subject_percentage` (
 --
 
 INSERT INTO `component_subject_percentage` (`csp_id`, `subject_id`, `component_id`, `percentage`) VALUES
-(178, 6, 2, '10'),
-(179, 6, 3, '70'),
-(180, 6, 16, '20'),
-(190, 4, 2, '30'),
-(191, 4, 3, '30'),
-(192, 4, 16, '40'),
-(364, 2, 2, '20'),
-(365, 2, 3, '20'),
-(366, 2, 16, '60'),
-(391, 9, 2, '20'),
-(392, 9, 3, '20'),
-(393, 9, 16, '60'),
-(400, 7, 2, '40'),
-(401, 7, 3, '40'),
-(402, 7, 16, '20');
+(421, 11, 2, '20'),
+(422, 11, 3, '30'),
+(423, 11, 19, '50');
 
 -- --------------------------------------------------------
 
@@ -165,7 +144,7 @@ CREATE TABLE `grading_components` (
 INSERT INTO `grading_components` (`component_id`, `name`) VALUES
 (2, 'Quarterly Assessment'),
 (3, 'Written Works'),
-(16, 'Performance Task');
+(19, 'Performance Task');
 
 -- --------------------------------------------------------
 
@@ -196,11 +175,8 @@ CREATE TABLE `section` (
 --
 
 INSERT INTO `section` (`section_id`, `section`, `gradelvl`) VALUES
-(1, 'Galungong', 'Grade 7'),
-(2, 'Isda', 'Grade 8'),
-(3, 'Fish', 'Grade 9'),
-(4, 'Swift', 'Grade 8'),
-(5, 'STEM B', 'Grade 10');
+(11, 'STEM B', 'Grade 7'),
+(12, 'Galungong', 'Grade 7');
 
 -- --------------------------------------------------------
 
@@ -218,15 +194,26 @@ CREATE TABLE `student` (
   `address` varchar(100) NOT NULL,
   `contact` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `LRN` int(11) NOT NULL
+  `LRN` int(11) NOT NULL,
+  `father` varchar(100) DEFAULT NULL,
+  `fathernum` varchar(100) DEFAULT NULL,
+  `mother` varchar(100) DEFAULT NULL,
+  `mothernum` varchar(100) DEFAULT NULL,
+  `guardian` varchar(100) DEFAULT NULL,
+  `guardiannum` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `student`
+-- Table structure for table `student_assignments`
 --
 
-INSERT INTO `student` (`firstname`, `middlename`, `lastname`, `suffix`, `sex`, `birthday`, `address`, `contact`, `student_id`, `LRN`) VALUES
-('Ronald', '', 'Aljas', '', 'male', '2003-07-02', 'Putik Zamboanga City', 2147483647, 8, 2147483647);
+CREATE TABLE `student_assignments` (
+  `assignment_id` int(11) NOT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `section_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -256,12 +243,7 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`subject_id`, `name`) VALUES
-(2, 'Science'),
-(4, 'Mathematics'),
-(6, 'MAPEH'),
-(7, 'Edukasyon sa Pagpapakatao'),
-(8, 'Mathematics'),
-(9, 'haha');
+(11, 'math');
 
 -- --------------------------------------------------------
 
@@ -292,6 +274,32 @@ CREATE TABLE `teacher` (
 
 INSERT INTO `teacher` (`id`, `firstname`, `middlename`, `lastname`, `suffix`, `birthday`, `address`, `contact`, `designation`, `assigned_subject`, `assigned_year_level`, `sex`, `username`, `password`) VALUES
 (0, 'kristina Marie', 'Ventura', 'Gadem', '', '2002-09-10', 'Putik Zamboanga City', '09128731892731', 'Adviser', 'english', 'Grade 7', 'female', 'qb202102844@wmsu.edu.ph', '$2y$10$dOmyzcfuIYYuDN3rsSPKC.yZHM/sMyspVcfj2MJcUz4h1Pq5shR/m');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_list`
+--
+
+CREATE TABLE `teacher_list` (
+  `teacher_id` int(11) NOT NULL,
+  `firstname` text NOT NULL,
+  `middlename` text NOT NULL,
+  `lastname` text NOT NULL,
+  `department` text NOT NULL,
+  `gender` text NOT NULL,
+  `contact` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `teacher_list`
+--
+
+INSERT INTO `teacher_list` (`teacher_id`, `firstname`, `middlename`, `lastname`, `department`, `gender`, `contact`, `email`, `password`, `DATE_CREATED`) VALUES
+(1, 'Ranielle Dae', 'Aldabe', 'Delos Reyes', 'English Department', 'female', '09639576655', 'ranielledaedelosreyes@gmail.com', '$2y$10$gvTbfaxP.sZh0k8wGpQa4OfasMMg/BPG5OyeR0qqJsu9DmPPLTOA2', '2024-03-17 17:33:19');
 
 -- --------------------------------------------------------
 
@@ -368,8 +376,8 @@ ALTER TABLE `admin_list`
 --
 ALTER TABLE `assessment_list`
   ADD PRIMARY KEY (`assessment_id`),
-  ADD KEY `class_id` (`class_id`),
-  ADD KEY `component_id` (`component_id`);
+  ADD KEY `component_id` (`component_id`),
+  ADD KEY `class_id` (`class_id`);
 
 --
 -- Indexes for table `calendar_event_master`
@@ -418,6 +426,14 @@ ALTER TABLE `student`
   ADD PRIMARY KEY (`student_id`);
 
 --
+-- Indexes for table `student_assignments`
+--
+ALTER TABLE `student_assignments`
+  ADD PRIMARY KEY (`assignment_id`),
+  ADD KEY `student_id` (`student_id`),
+  ADD KEY `section_id` (`section_id`);
+
+--
 -- Indexes for table `student_list`
 --
 ALTER TABLE `student_list`
@@ -437,6 +453,12 @@ ALTER TABLE `teacher`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `teacher_list`
+--
+ALTER TABLE `teacher_list`
+  ADD PRIMARY KEY (`teacher_id`);
+
+--
 -- Indexes for table `transmutation_table`
 --
 ALTER TABLE `transmutation_table`
@@ -450,13 +472,13 @@ ALTER TABLE `transmutation_table`
 -- AUTO_INCREMENT for table `admin_list`
 --
 ALTER TABLE `admin_list`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `assessment_list`
 --
 ALTER TABLE `assessment_list`
-  MODIFY `assessment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `assessment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `calendar_event_master`
@@ -468,31 +490,37 @@ ALTER TABLE `calendar_event_master`
 -- AUTO_INCREMENT for table `class_list`
 --
 ALTER TABLE `class_list`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `component_subject_percentage`
 --
 ALTER TABLE `component_subject_percentage`
-  MODIFY `csp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=403;
+  MODIFY `csp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=424;
 
 --
 -- AUTO_INCREMENT for table `grading_components`
 --
 ALTER TABLE `grading_components`
-  MODIFY `component_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `component_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `student_assignments`
+--
+ALTER TABLE `student_assignments`
+  MODIFY `assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `student_list`
@@ -504,7 +532,13 @@ ALTER TABLE `student_list`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `teacher_list`
+--
+ALTER TABLE `teacher_list`
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `transmutation_table`
@@ -521,7 +555,8 @@ ALTER TABLE `transmutation_table`
 --
 ALTER TABLE `assessment_list`
   ADD CONSTRAINT `assessment_list_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `class_list` (`class_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `assessment_list_ibfk_2` FOREIGN KEY (`component_id`) REFERENCES `grading_components` (`component_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `assessment_list_ibfk_2` FOREIGN KEY (`component_id`) REFERENCES `grading_components` (`component_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `class_id` FOREIGN KEY (`class_id`) REFERENCES `class_list` (`class_id`);
 
 --
 -- Constraints for table `class_list`
@@ -542,6 +577,13 @@ ALTER TABLE `component_subject_percentage`
 ALTER TABLE `mark_list`
   ADD CONSTRAINT `mark_list_ibfk_1` FOREIGN KEY (`assessment_id`) REFERENCES `assessment_list` (`assessment_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `mark_list_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student_list` (`student_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `student_assignments`
+--
+ALTER TABLE `student_assignments`
+  ADD CONSTRAINT `student_assignments_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`),
+  ADD CONSTRAINT `student_assignments_ibfk_2` FOREIGN KEY (`section_id`) REFERENCES `section` (`section_id`);
 
 --
 -- Constraints for table `student_list`

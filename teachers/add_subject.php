@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user']) && $_SESSION['user'] == 'teacher_list') {
+    header('location: ./login.php');
+    exit(); 
+}
+?>
+
 <div class="modal fade" id="add_subject_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">

@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
-    header('location: ./dashboard.php');
+if (isset($_SESSION['user']) && $_SESSION['user'] == 'teacher_list') {
+    header('location: ./login.php');
     exit(); 
 }
 
@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
     $account->password = htmlentities($_POST['password']); // Sanitize input
 
     if ($account->sign_in_teacher()) {
-        $_SESSION['teachers_list'] = 'teacher_list'; // Ensure session key is consistent
+        $_SESSION['user'] = 'teacher_list'; // Ensure session key is consistent
         header('location: ./dashboard.php');
         exit(); // Always exit after redirection
     } else {

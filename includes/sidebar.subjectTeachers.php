@@ -40,7 +40,7 @@
                     <i class="lni lni-cog"></i>
                     <span>Settings</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="../teachers/logout.php" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>

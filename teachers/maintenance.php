@@ -2,7 +2,7 @@
 
 session_start();
 
-if (isset($_SESSION['teachers_list']) && $_SESSION['teachers_list'] == 'teacher_list') {
+if (isset($_SESSION['user']) && $_SESSION['user'] == 'teacher_list') {
     header('location: ./login.php');
     exit(); // Always exit after redirection
 }

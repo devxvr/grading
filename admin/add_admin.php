@@ -4,11 +4,11 @@
     require_once  './functions.php';
 
     
-    //  session_start();
+      session_start();
      
-    //  if (!isset($_SESSION['user']) || $_SESSION['user'] != 'admin'){
-    //     header('location: ./login.php');
-    //  }
+      if (!isset($_SESSION['user']) || $_SESSION['user'] != 'admin'){
+         header('location: ./login.php');
+      }
     
     
 

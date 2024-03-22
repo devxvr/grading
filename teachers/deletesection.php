@@ -1,4 +1,10 @@
 <?php
+session_start();
+     
+if (!isset($_SESSION['user']) || $_SESSION['user'] != 'teacher_list'){
+   header('location: ./login.php');
+}
+
 require_once './section-class.php';
 
 $section = new Section();

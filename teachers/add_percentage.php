@@ -2,11 +2,11 @@
 
 
 session_start();
+     
+      if (!isset($_SESSION['user']) || $_SESSION['user'] != 'teacher_list'){
+         header('location: ./login.php');
+      }
 
-if (isset($_SESSION['user']) && $_SESSION['user'] == 'teacher_list') {
-    header('location: ./login.php');
-    exit(); 
-}
 
 require_once("../includes/database.php");
 require_once("./percentage-class.php");

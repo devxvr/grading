@@ -1,10 +1,10 @@
 <?php
 session_start();
-
-if (isset($_SESSION['user']) && $_SESSION['user'] == 'teacher_list') {
-    header('location: ./login.php');
-    exit(); 
+     
+if (!isset($_SESSION['user']) || $_SESSION['user'] != 'teacher_list'){
+   header('location: ./login.php');
 }
+
 
     $title = 'Home';
     require_once('../includes/head.php');
